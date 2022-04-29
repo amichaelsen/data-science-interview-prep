@@ -3,7 +3,14 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+- caption: Review
+  chapters:
+  - file: topics/probability/review
+  - file: topics/machine_learning/review
+  - file: topics/SQL/review
+- caption: Practice
+  chapters:
+  - file: topics/probability/practice
+  - file: topics/machine_learning/practice
+  - file: topics/SQL/practice
