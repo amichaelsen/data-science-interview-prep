@@ -2,8 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Data Science Interview Prep
-author: Anya Michaelsn
-logo: logo.png
+author: Anya Michaelsen
+logo: dog_computer.webp
+
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

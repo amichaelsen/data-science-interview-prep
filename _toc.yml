@@ -4,13 +4,17 @@
 format: jb-book
 root: intro
 parts:
-- caption: Review
-  chapters:
-  - file: topics/probability/review
-  - file: topics/machine_learning/review
-  - file: topics/SQL/review
+# - caption: Review
+#   chapters:
+#   - file: review/probability
+#   - file: review/machine_learning
+#   - file: review/SQL
 - caption: Practice
   chapters:
-  - file: topics/probability/practice
-  - file: topics/machine_learning/practice
-  - file: topics/SQL/practice
+  - file: practice/probability
+  - file: practice/machine_learning
+  - file: practice/SQL
+  - file: practice/coding
+- caption: Resources
+  chapters:
+  - file: resources
