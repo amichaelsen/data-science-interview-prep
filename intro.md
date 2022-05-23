@@ -7,3 +7,5 @@ The last section provides links to resources used in compiling this list of ques
 
 ```{tableofcontents}
 ```
+
+This website was created using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html)
