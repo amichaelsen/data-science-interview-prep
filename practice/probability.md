@@ -1,5 +1,7 @@
 # Probability & Statistics 
 
+Clicking on a question in the list below will take you to the solution, clicking on the question header will bring you back to this list of questions. 
+
 <span style="font-size:2em;">Questions</span>
 
 ```{contents}
@@ -47,7 +49,7 @@ so **if $X$ and $Y$ are independent,
 
 $$\text{Var}(aX+bY) = a^2\text{Var}(X)+b^2\text{Var}(Y).$$
 
-A counterexample for the aditivity of variance when the variables are dependent is $Y=-X$, then $\text{Var}(X+Y) = \text{Var}(0)=0\neq 2\text{Var}(X)$ for any non-constant $X$. 
+A counterexample for the additivity of variance when the variables are dependent is $Y=-X$, then $\text{Var}(X+Y) = \text{Var}(0)=0\neq 2\text{Var}(X)$ for any non-constant $X$. 
 
 ### What is Bayes Rule? 
 
@@ -71,7 +73,7 @@ For a discrete random variable $X$, the probability mass function is
 
 $$ p(a) = \mathbb{P}(X=a)$$
 
-For a continuous random variable, $\mathbb{P}(X=a)=0$$, so we define the continuous analog, the probability density function such that
+For a continuous random variable, $\mathbb{P}(X=a)=0$, so we define the continuous analog, the probability density function such that
 
 $$ \mathbb{P}(a\leq X\leq b) = \int_a^b p(x)dx$$
 
