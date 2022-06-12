@@ -4,6 +4,8 @@
 
 * [Ace the Data Science Interview](https://www.amazon.com/dp/0578973839?&linkCode=sl1&tag=nicksingh03-20&linkId=4fa541a539320e8936926cb3a5167881&language=en_US&ref_=as_li_ss_tl)
 
+* [Nick Singh's LinkedIn](https://www.linkedin.com/in/nick-singh-tech/)
+
 Some online lists of questions
 * https://www.springboard.com/blog/data-science/machine-learning-interview-questions/
 * https://github.com/iamtodor/data-science-interview-questions-and-answers
