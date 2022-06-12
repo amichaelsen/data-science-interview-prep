@@ -180,9 +180,18 @@ $$\rho(X,Y) = \frac{\text{Cov}(X,Y)}{\sigma_X\sigma_Y}$$
 
 where $\sigma_Z = \sqrt{\text{Var}(Z)}$
 
-### What is the Law of Large Numbers? TODO
+### What is the Law of Large Numbers?
 
-### State the Central Limit Theorem. TODO
+**Law of Larger Numbers:**Let $X_i$ be i.i.d. random variables, then the sample mean converges to the true mean, i.e.
+$$ \lim_{n\rightarrow \infty} \frac{1}{n}\sum_{k=1}^n X_k = \mathbb{E}[X]$$
+
+Note that the variance for $X_i$ need not be finite, although finite variance will converge faster. 
+
+### State the Central Limit Theorem.
+
+The central limit theorem says that as a sample of i.i.d. variables with finite mean and variance gets large, the sample mean approaches a normally distributed random variable. Crucially, this holds *regardless of the distribution of the* $X_i$*s*. Formally, 
+
+**Central Limit Theorem:** Let $X_1,X_2,\ldots$ be i.i.d. with $\mathbb{E}[X_i] = \mu$ and $\text{Var}[X] = \sigma^2<\infty$. Let $\bar{X}_n =\frac{1}{n}(X_1+\cdots + X_n)$ be the sample mean, then as $n\rightarrow \infty$, we have $\bar{X}_n\rightarrow N(\mu, \frac{\sigma^2}{n})$. 
 
 ### What are Type I and Type II errors? How do they relate to the significance level $\alpha$ and the power level $\beta$?
 
@@ -248,13 +257,22 @@ First, let's make some simplifying (if slightly inaccurate) assumptions. Let eac
 
 This is a binomial distribution $X\sim Binom(p_A,6)$ so the probability that the series goes to a seventh game is $P(X=3)={6 \choose 3} p_A^3 (1-p_A)^3$.
 
-### Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect? TODO
+### Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect? 
+
+Any collection of 4 points, A, B, C, and D, is equally likely to be selected, and given those points the three chord arrangements, AB/CD, AC/BD, and AD/CB, are also equally likely. Only the configuration will result in crossing chords, so there is a 1/3 chance of the random chords intersecting. 
 
 ### There are 50 cards of 5 different colors. Each color has cards numbered between 1 to 10. You pick 2 cards at random. What is the probability that they are not of same color and also not of same number?
 
 There are $50*49$ possible pairs of cards. Fixing the first card of a pair, there are 9 remaining cards of the same color, and 4 remaining cards of the same value among the 49 cards remaining. So there are $49-9-4=36$ cards that would give a pair satisfying the conditions. The probability is then $36/49$. 
 
 ### What is the expected number of rolls needed to see all 6 sides of a fair die? TODO
+
+
+**Attempt 1** 
+
+Could model the probability of not all 6 for each roll and sum. (Caution: be careful of double counting)
+
+Given $n\geq 6$ rolls, the odds that all 6 faces are seen is the complement of the odds that not all faces are seen. Need some expression for this that we can sum over. 
 
 ### Three friends in Seattle each told you it’s rainy, and each person has a 1/3 probability of lying. What is the probability that Seattle is rainy? Assume the probability of rain on any given day in Seattle is 0.25.
 
@@ -279,6 +297,9 @@ In the more general case, there are still only 2 non-collision outcomes, but the
 <sub> Source: [Ace the Data Science Interview](https://www.amazon.com/dp/0578973839?&linkCode=sl1&tag=nicksingh03-20&linkId=4fa541a539320e8936926cb3a5167881&language=en_US&ref_=as_li_ss_tl)</sub>
 
 ### How many cards would you expect to draw from a standard deck before seeing the first ace? TODO
+
+
+
 
 
 ### Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?
@@ -313,6 +334,7 @@ $$ \int_{-\infty}^\infty xp_{[a,b]}(x)dx = \int_a^b \frac{x}{b-a}dx = \frac{1}{b
 ### What is the Central Limit Theorem? Why is it useful?  TODO
 
 ### How would you explain a confidence interval to a non-technical audience? TODO
+
 
 ### Describe p-values in layman’s terms. TODO
 
