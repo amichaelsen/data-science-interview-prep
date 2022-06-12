@@ -1,3 +1,0 @@
-# SQL Review
-
-text here
