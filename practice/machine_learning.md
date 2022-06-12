@@ -1,5 +1,8 @@
 # Machine Learning 
 
+Clicking on a question in the list below will take you to the solution, clicking on the question header will bring you back to this list of questions. 
+
+**Contributing** Have ideas for more questions? See the [contributing section](contributing-label).
 
 <span style="font-size:2em;">Questions</span>
 
