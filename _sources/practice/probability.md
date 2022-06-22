@@ -166,6 +166,7 @@ The Normal, or Gaussian, Distribution has the bell curve probability density fun
 the CDF is expressed in terms on the integral. 
 
 ![Gaussian Distribution](images/gaussian_dist.png)
+
 [Image Source](https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
 
 
@@ -379,7 +380,7 @@ $$
 Then we take that estimator that maximizes this function, 
 
 $$
-\hat{p}_{MLE} = \argmax_{p} \mathcal{L}(p;X_1,\ldots, X_n).
+\hat{p}_{MLE} = \arg\max_{p} \mathcal{L}(p;X_1,\ldots, X_n).
 $$
 
 In practice, we often define the log-likelihood function $\ell(p;X_1,\ldots, X_n) = \log(\mathcal{L}(p;X_1,\ldots, X_n))$ since the maximizing value for $p$ is the same for $\ell$ and $\mathcal{L}$ since logs preserve order, and for independent samples the likelihood function will be a product of terms that turn into sums after the log function. 
@@ -387,7 +388,7 @@ In practice, we often define the log-likelihood function $\ell(p;X_1,\ldots, X_n
 **MAP**, or **maximum a posteriori**, is another way of estimating a distribution parameter but where we assume that some parameter values are more likely than others. In other words, the parameter itself comes from a distribution, $P$. Similar to MLE, we derive a (log)-likelihood function $\ell$ or $\mathcal{L}$, but now we weight this likelihood of the sample, by the likelihood of the parameter. The result is that 
 
 $$
-\hat{p}_{MAP} = \argmax_{p} \mathcal{L}(p;X_1,\ldots, X_n)P(p).
+\hat{p}_{MAP} = \arg\max_{p} \mathcal{L}(p;X_1,\ldots, X_n)P(p).
 $$
 
 

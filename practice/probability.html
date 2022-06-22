@@ -1326,8 +1326,8 @@ $<span class="math notranslate nohighlight">\(P(X=k) = {n \choose k} p^{k}(1-p)^
 <p>The Normal, or Gaussian, Distribution has the bell curve probability density function, with the highest probability closest to the mean, and lower probabilities farther and farther from the center. With a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>,</p>
 <p><strong>PDF</strong> <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp(\frac{-(x-\mu)^2}{2\sigma^2})\)</span></p>
 <p>the CDF is expressed in terms on the integral.</p>
-<p><img alt="Gaussian Distribution" src="../_images/gaussian_dist.png" />
-<a class="reference external" href="https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2">Image Source</a></p>
+<p><img alt="Gaussian Distribution" src="../_images/gaussian_dist.png" /></p>
+<p><a class="reference external" href="https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2">Image Source</a></p>
 </section>
 <section id="what-is-covariance-what-about-the-correlation-rho-between-x-and-y">
 <h3><a class="toc-backref" href="#id17">What is covariance? What about the correlation <span class="math notranslate nohighlight">\(\rho\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>?</a><a class="headerlink" href="#what-is-covariance-what-about-the-correlation-rho-between-x-and-y" title="Permalink to this headline">#</a></h3>
@@ -1500,13 +1500,13 @@ $<span class="math notranslate nohighlight">\(P(B) = P(B|A)P(A) + P(B|A^C)P(A^C)
 Then we take that estimator that maximizes this function,</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{p}_{MLE} = \argmax_{p} \mathcal{L}(p;X_1,\ldots, X_n).
+\hat{p}_{MLE} = \arg\max_{p} \mathcal{L}(p;X_1,\ldots, X_n).
 \]</div>
 <p>In practice, we often define the log-likelihood function <span class="math notranslate nohighlight">\(\ell(p;X_1,\ldots, X_n) = \log(\mathcal{L}(p;X_1,\ldots, X_n))\)</span> since the maximizing value for <span class="math notranslate nohighlight">\(p\)</span> is the same for <span class="math notranslate nohighlight">\(\ell\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> since logs preserve order, and for independent samples the likelihood function will be a product of terms that turn into sums after the log function.</p>
 <p><strong>MAP</strong>, or <strong>maximum a posteriori</strong>, is another way of estimating a distribution parameter but where we assume that some parameter values are more likely than others. In other words, the parameter itself comes from a distribution, <span class="math notranslate nohighlight">\(P\)</span>. Similar to MLE, we derive a (log)-likelihood function <span class="math notranslate nohighlight">\(\ell\)</span> or <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, but now we weight this likelihood of the sample, by the likelihood of the parameter. The result is that</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{p}_{MAP} = \argmax_{p} \mathcal{L}(p;X_1,\ldots, X_n)P(p).
+\hat{p}_{MAP} = \arg\max_{p} \mathcal{L}(p;X_1,\ldots, X_n)P(p).
 \]</div>
 </section>
 <section id="explain-hypothesis-testing-todo">
