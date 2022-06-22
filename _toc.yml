@@ -9,12 +9,13 @@ parts:
 #   - file: review/probability
 #   - file: review/machine_learning
 #   - file: review/SQL
-- caption: Practice
+- caption: Practice Questions
   chapters:
   - file: practice/probability
   - file: practice/machine_learning
   - file: practice/SQL
   - file: practice/coding
+  - file: practice/behavioral
 - caption: Resources
   chapters:
   - file: resources
