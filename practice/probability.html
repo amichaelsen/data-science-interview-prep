@@ -1276,7 +1276,7 @@ Here's my note!
 </section>
 <section id="what-is-a-bernoulli-trial-what-is-its-mean-and-variance">
 <h3><a class="toc-backref" href="#id10">What is a Bernoulli Trial? What is its mean and variance?</a><a class="headerlink" href="#what-is-a-bernoulli-trial-what-is-its-mean-and-variance" title="Permalink to this headline">#</a></h3>
-<p>A Bernoulli trial is a single experiment with a “success” outcome occuring with probability <span class="math notranslate nohighlight">\(p\)</span> (ex: coin flip).</p>
+<p>A Bernoulli trial is a single experiment with a “success” outcome occurring with probability <span class="math notranslate nohighlight">\(p\)</span> (ex: coin flip).</p>
 <p>The mean is given by</p>
 <div class="math notranslate nohighlight">
 \[ \mathbb{E}(X) = 0(1-p) + 1(p) =p \]</div>
@@ -1286,15 +1286,15 @@ Here's my note!
 </section>
 <section id="what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance">
 <h3><a class="toc-backref" href="#id11">What is the binomial distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
-<p>Given <span class="math notranslate nohighlight">\(n\)</span> Bernoulli trials, let <span class="math notranslate nohighlight">\(X\)</span> be the number of successes that occured, then <span class="math notranslate nohighlight">\(X\)</span> has a binomial distribution, <span class="math notranslate nohighlight">\(X\sim Binom(n,p)\)</span>.</p>
+<p>Given <span class="math notranslate nohighlight">\(n\)</span> Bernoulli trials, let <span class="math notranslate nohighlight">\(X\)</span> be the number of successes that occurred, then <span class="math notranslate nohighlight">\(X\)</span> has a binomial distribution, <span class="math notranslate nohighlight">\(X\sim Binom(n,p)\)</span>.</p>
 <p>This is a <strong>discrete</strong> distribution, with probability mass function
 $<span class="math notranslate nohighlight">\(P(X=k) = {n \choose k} p^{k}(1-p)^{n-k}.\)</span>$</p>
 <p>where <span class="math notranslate nohighlight">\({n \choose k}=\frac{n!}{k!(n-k)!}\)</span> is the binomial coeffient.</p>
-<p>The expected value is the sum of the expected value for each Bernoulli trial, which is <span class="math notranslate nohighlight">\(p\)</span>, so <span class="math notranslate nohighlight">\(\mathbb{E}(X)=np\)</span>. Similarly, given the indepedence of the trials, the variance is <span class="math notranslate nohighlight">\(\text{Var}(X) = np(1-p)\)</span>.</p>
+<p>The expected value is the sum of the expected value for each Bernoulli trial, which is <span class="math notranslate nohighlight">\(p\)</span>, so <span class="math notranslate nohighlight">\(\mathbb{E}(X)=np\)</span>. Similarly, given the independence of the trials, the variance is <span class="math notranslate nohighlight">\(\text{Var}(X) = np(1-p)\)</span>.</p>
 </section>
 <section id="what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance">
 <h3><a class="toc-backref" href="#id12">What is the Poisson distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
-<p>Given random events happening at a known average rate, the Poisson distribution model the probability of a given number of these random events occuring in a fixed interval (usually time). If <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> is the average number of events occuring in the time period, and <span class="math notranslate nohighlight">\(X\)</span> is the number of these events occuring in an interval,</p>
+<p>Given random events happening at a known average rate, the Poisson distribution model the probability of a given number of these random events occurring in a fixed interval (usually time). If <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> is the average number of events occurring in the time period, and <span class="math notranslate nohighlight">\(X\)</span> is the number of these events occurring in an interval,</p>
 <div class="math notranslate nohighlight">
 \[ \mathbb{P}(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}.\]</div>
 <p>Both the mean and variance of <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
@@ -1307,7 +1307,7 @@ $<span class="math notranslate nohighlight">\(P(X=k) = {n \choose k} p^{k}(1-p)^
 </section>
 <section id="what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance">
 <h3><a class="toc-backref" href="#id14">What is the Geometric distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
-<p>Given a sequence of repeated Bernoulli trials with probablity <span class="math notranslate nohighlight">\(p\)</span>, the geometric distribution models the number of trials needed to get the first success. Let <span class="math notranslate nohighlight">\(X\)</span> be the number of attempts until a success, then <span class="math notranslate nohighlight">\(\mathbb{P}(X) = (1-p)^{k-1}p\)</span> for <span class="math notranslate nohighlight">\(k\geq 1\)</span>. The mean is <span class="math notranslate nohighlight">\(\mathbb{E}(X) = 1/p\)</span>, via the following derivation,</p>
+<p>Given a sequence of repeated Bernoulli trials with probability <span class="math notranslate nohighlight">\(p\)</span>, the geometric distribution models the number of trials needed to get the first success. Let <span class="math notranslate nohighlight">\(X\)</span> be the number of attempts until a success, then <span class="math notranslate nohighlight">\(\mathbb{P}(X) = (1-p)^{k-1}p\)</span> for <span class="math notranslate nohighlight">\(k\geq 1\)</span>. The mean is <span class="math notranslate nohighlight">\(\mathbb{E}(X) = 1/p\)</span>, via the following derivation,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 \mathbb{E}(X) &amp;= \sum_{k=0}^\infty k(1-p)^{k-1}p  = p\sum_{k=0}^\infty k(1-p)^{k-1} =p \sum_{k=0}^\infty -\frac{d}{dp}[(1-p)^k] \\
@@ -1317,7 +1317,7 @@ $<span class="math notranslate nohighlight">\(P(X=k) = {n \choose k} p^{k}(1-p)^
 </section>
 <section id="what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance">
 <h3><a class="toc-backref" href="#id15">What is the Exponential distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
-<p>The exponential distribution is the probability distribution of the time between events in a Poisson point process, a process where events with fixed average rate occur independently. It is analagous to the geometric distribution (discrete).</p>
+<p>The exponential distribution is the probability distribution of the time between events in a Poisson point process, a process where events with fixed average rate occur independently. It is analogous to the geometric distribution (discrete).</p>
 <p><strong>PDF:</strong>  <span class="math notranslate nohighlight">\(f(x)=\lambda e^{-\lambda x}\)</span>, <strong>CDF:</strong> <span class="math notranslate nohighlight">\(F(x) = 1-e^{-\lambda x}\)</span>. Both for <span class="math notranslate nohighlight">\(x\geq 0\)</span> and <span class="math notranslate nohighlight">\(0\)</span> when <span class="math notranslate nohighlight">\(x&lt;0\)</span>,</p>
 <p>It has mean <span class="math notranslate nohighlight">\(\frac{1}{\lambda}\)</span>, with variance <span class="math notranslate nohighlight">\(\frac{1}{\lambda^2}\)</span>. The former is from the integration of <span class="math notranslate nohighlight">\(\int_0^\infty x\lambda e^{-\lambda x}dx\)</span> using integration of parts. Integrating <span class="math notranslate nohighlight">\(\int_0^\infty x^2\lambda e^{-\lambda x}dx\)</span> by parts twice gives the variance.</p>
 </section>
@@ -1363,14 +1363,14 @@ $<span class="math notranslate nohighlight">\( \lim_{n\rightarrow \infty} \frac{
 <h2><a class="toc-backref" href="#id21">Probability</a><a class="headerlink" href="#probability" title="Permalink to this headline">#</a></h2>
 <section id="if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing">
 <h3><a class="toc-backref" href="#id22">If you roll 3 dice in order, what is the probability that the values will be strictly decreasing?</a><a class="headerlink" href="#if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing" title="Permalink to this headline">#</a></h3>
-<p>There are <span class="math notranslate nohighlight">\(6^3\)</span> possible rolls, all of which are equally likely. We can count the number of rolls that are strictly descreasing to get their probability.</p>
+<p>There are <span class="math notranslate nohighlight">\(6^3\)</span> possible rolls, all of which are equally likely. We can count the number of rolls that are strictly decreasing to get their probability.</p>
 <p>If the first roll is a 1 or 2, the sequence cannot be strictly decreasing.</p>
 <p>If the first roll is a 3, there is exactly 1 strictly decreasing sequence.</p>
 <p>If the first roll is a 4, there are 3 decreasing sequences (4-3-2, 4-3-1, 4-2-1).</p>
 <p>If the first roll is a 5, there are 6 decreasing sequences (5-4-3/2/1, 5-3-2/1, 5-2-1)</p>
 <p>If the first roll is a 6, there are 10 decreasing sequences (6-5-4/3/2/1, 6-4-3/2/1, 6-3-2/1. 6-2-1).</p>
 <p>Adding these possibilities up, there are 10+6+3+1 = 20 strictly decreasing rolls possible, so the probability that rolling 3 dice in order will produce one of these sequences is <span class="math notranslate nohighlight">\(20/6^3\)</span>.</p>
-<p>A general patten can be derived. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of rolls and let <span class="math notranslate nohighlight">\(n\)</span> be the maximum allowed value of any roll, define <span class="math notranslate nohighlight">\(X(k,n)\)</span> be the number of strictly decreasing rolls possible. The problem asks for <span class="math notranslate nohighlight">\(X(3,6)\)</span>. This quanitity satisfies a recursive relation:</p>
+<p>A general patten can be derived. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of rolls and let <span class="math notranslate nohighlight">\(n\)</span> be the maximum allowed value of any roll, define <span class="math notranslate nohighlight">\(X(k,n)\)</span> be the number of strictly decreasing rolls possible. The problem asks for <span class="math notranslate nohighlight">\(X(3,6)\)</span>. This quantity satisfies a recursive relation:</p>
 <div class="math notranslate nohighlight">
 \[ X(k,n) = X(k-1,1) + X(k-1, 2) + \cdots + X(k-1, n-1) \]</div>
 <p>since after the first roll (which could be <span class="math notranslate nohighlight">\(1,2,\ldots, n\)</span>), there are <span class="math notranslate nohighlight">\(k-1\)</span> rolls remaining, all of which must be less than the first roll value. Some base cases are <span class="math notranslate nohighlight">\(X(1,n)=n\)</span>, <span class="math notranslate nohighlight">\(X(k,1)=0\)</span> if <span class="math notranslate nohighlight">\(k&gt;1\)</span>, and <span class="math notranslate nohighlight">\(X(0,n) = 0\)</span>. Using this formulation,</p>
