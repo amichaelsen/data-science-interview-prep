@@ -1,0 +1,1594 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Probability &amp; Statistics &#8212; Data Science Interview Prep</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Machine Learning" href="machine_learning.html" />
+    <link rel="prev" title="Interview Prep" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/dog_computer.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science Interview Prep</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Interview Prep
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Practice
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Probability &amp; Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="machine_learning.html">
+   Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SQL.html">
+   SQL &amp; Databases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding.html">
+   Coding &amp; Algorithms
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../resources.html">
+   Resources
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/amichaelsen/data-science-interview-prep"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/amichaelsen/data-science-interview-prep/issues/new?title=Issue%20on%20page%20%2Fpractice/probability.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/amichaelsen/data-science-interview-prep/edit/main/practice/probability.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/practice/probability.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warm-ups">
+   Warm-Ups
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-mean-of-a-random-variable-how-is-it-computed">
+     What is the mean of a random variable? How is it computed?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-variance-of-a-random-variable">
+     What is the variance of a random variable?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-and-how-do-expected-value-and-variance-add-the-is-what-is-mathbb-e-ax-by-and-text-var-ax-by">
+     When and how do expected value and variance add? The is, what is
+     <span class="math notranslate nohighlight">
+      \(\mathbb{E}(aX+bY)\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\text{Var}(aX+bY)\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-bayes-rule">
+     What is Bayes Rule?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-it-mean-for-two-events-to-independent">
+     What does it mean for two events to independent?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-law-of-total-probability">
+     What is the Law of Total Probability?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-probability-mass-function-pmf-probability-density-function-pdf-cumulative-distribution-function-cdf">
+     What is a probability mass function (pmf)? probability density function (pdf)? Cumulative distribution function (cdf)?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-the-relationships-between-pdfs-and-cdfs-what-properties-do-they-have">
+     What are the relationships between pdfs and cdfs? What properties do they have?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-bernoulli-trial-what-is-its-mean-and-variance">
+     What is a Bernoulli Trial? What is its mean and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance">
+     What is the binomial distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Poisson distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-uniform-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Uniform distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Geometric distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Exponential distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-normal-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Normal distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-covariance-what-about-the-correlation-rho-between-x-and-y">
+     What is covariance? What about the correlation
+     <span class="math notranslate nohighlight">
+      \(\rho\)
+     </span>
+     between
+     <span class="math notranslate nohighlight">
+      \(X\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(Y\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-law-of-large-numbers">
+     What is the Law of Large Numbers?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#state-the-central-limit-theorem">
+     State the Central Limit Theorem.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-type-i-and-type-ii-errors-how-do-they-relate-to-the-significance-level-alpha-and-the-power-level-beta">
+     What are Type I and Type II errors? How do they relate to the significance level
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+     and the power level
+     <span class="math notranslate nohighlight">
+      \(\beta\)
+     </span>
+     ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability">
+   Probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing">
+     If you roll 3 dice in order, what is the probability that the values will be strictly decreasing?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-disease-screening-test-has-a-95-accuracy-for-detecting-the-disease-and-a-2-false-positive-rate-the-odds-that-a-person-has-the-disease-are-1-if-a-person-tests-positive-what-are-the-odds-they-have-the-disease">
+     A disease screening test has a 95% accuracy for detecting the disease, and a 2% false positive rate. The odds that a person has the disease are 1%. If a person tests positive, what are the odds they have the disease?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-probability-that-a-seven-game-series-goes-to-7-games">
+     What is the probability that a seven-game series goes to 7 games?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#say-you-draw-a-circle-and-choose-two-chords-at-random-what-is-the-probability-that-those-chords-will-intersect">
+     Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#there-are-50-cards-of-5-different-colors-each-color-has-cards-numbered-between-1-to-10-you-pick-2-cards-at-random-what-is-the-probability-that-they-are-not-of-same-color-and-also-not-of-same-number">
+     There are 50 cards of 5 different colors. Each color has cards numbered between 1 to 10. You pick 2 cards at random. What is the probability that they are not of same color and also not of same number?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-expected-number-of-rolls-needed-to-see-all-6-sides-of-a-fair-die-todo">
+     What is the expected number of rolls needed to see all 6 sides of a fair die? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-friends-in-seattle-each-told-you-its-rainy-and-each-person-has-a-1-3-probability-of-lying-what-is-the-probability-that-seattle-is-rainy-assume-the-probability-of-rain-on-any-given-day-in-seattle-is-0-25">
+     Three friends in Seattle each told you it’s rainy, and each person has a 1/3 probability of lying. What is the probability that Seattle is rainy? Assume the probability of rain on any given day in Seattle is 0.25.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-ants-are-sitting-at-the-corners-of-an-equilateral-triangle-each-ant-randomly-picks-a-direction-and-starts-moving-along-the-edge-of-the-triangle-what-is-the-probability-that-none-of-the-ants-collide-now-what-if-it-is-k-ants-on-all-k-corners-of-an-equilateral-polygon">
+     Three ants are sitting at the corners of an equilateral triangle. Each ant randomly picks a direction and starts moving along the edge of the triangle. What is the probability that none of the ants collide? Now, what if it is
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     ants on all
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     corners of an equilateral polygon?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-many-cards-would-you-expect-to-draw-from-a-standard-deck-before-seeing-the-first-ace-todo">
+     How many cards would you expect to draw from a standard deck before seeing the first ace? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#say-you-are-given-an-unfair-coin-with-an-unknown-bias-towards-heads-or-tails-how-can-you-generate-fair-odds-using-this-coin">
+     Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-fair-die-is-rolled-n-times-what-is-the-probability-that-the-largest-number-rolled-is-r-for-each-r-in-1-ldots-6-todo">
+     A fair die is rolled
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     times. What is the probability that the largest number rolled is
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
+     , for each
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
+     in
+     <span class="math notranslate nohighlight">
+      \(1,\ldots,6\)
+     </span>
+     ? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-x-y-sim-n-0-1-be-independent-gaussians-what-is-p-2x-y">
+     Let
+     <span class="math notranslate nohighlight">
+      \(X,Y\sim N(0,1)\)
+     </span>
+     be independent Gaussians, what is
+     <span class="math notranslate nohighlight">
+      \(P(2X&gt;Y)\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#there-are-two-groups-of-n-users-a-and-b-and-each-user-in-a-is-friends-with-those-in-b-and-vice-versa-each-user-in-a-will-randomly-choose-a-user-in-b-as-their-best-friend-and-each-user-in-b-will-randomly-choose-a-user-in-a-as-their-best-friend-if-two-people-have-chosen-each-other-they-are-mutual-best-friends-what-is-the-probability-that-there-will-be-no-mutual-best-friendships-todo">
+     There are two groups of
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics">
+   Statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive-the-expected-value-for-the-uniform-distribution-a-b">
+     Derive the expected value for the uniform distribution
+     <span class="math notranslate nohighlight">
+      \([a,b]\)
+     </span>
+     .
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-central-limit-theorem-why-is-it-useful-todo">
+     What is the Central Limit Theorem? Why is it useful?  TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-would-you-explain-a-confidence-interval-to-a-non-technical-audience-todo">
+     How would you explain a confidence interval to a non-technical audience? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe-p-values-in-laymans-terms-todo">
+     Describe p-values in layman’s terms. TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe-a-b-testing-what-are-some-common-pitfalls-todo">
+     Describe A/B testing. What are some common pitfalls? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-would-you-derive-a-confidence-interval-from-a-series-of-coin-tosses-todo">
+     How would you derive a confidence interval from a series of coin tosses? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#you-sample-from-a-uniform-distribution-0-d-n-times-what-is-your-best-estimate-of-d">
+     You sample from a uniform distribution
+     <span class="math notranslate nohighlight">
+      \([0, d]\)
+     </span>
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     times. What is your best estimate of
+     <span class="math notranslate nohighlight">
+      \(d\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#you-are-drawing-from-a-normally-distributed-random-variable-x-sim-n-0-1-once-a-day-what-is-the-approximate-expected-number-of-days-until-you-get-a-value-of-more-than-2">
+     You are drawing from a normally distributed random variable
+     <span class="math notranslate nohighlight">
+      \(X \sim N(0, 1)\)
+     </span>
+     once a day. What is the approximate expected number of days until you get a value of more than 2?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive-the-expectation-for-a-geometric-distributed-random-variable">
+     Derive the expectation for a geometric distributed random variable.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#given-a-random-bernoulli-trial-generator-how-do-you-return-a-value-sampled-from-a-normal-distribution-todo">
+     Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution.  TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-mle-what-about-map-how-do-they-compare">
+     What is MLE? What about MAP? How do they compare?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explain-hypothesis-testing-todo">
+     Explain hypothesis testing.  TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-z-test-what-is-a-t-test-when-would-you-use-each-todo">
+     What is a
+     <span class="math notranslate nohighlight">
+      \(z\)
+     </span>
+     -test? What is a
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test? When would you use each? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suppose-you-draw-n-samples-from-a-uniform-distribution-u-a-b-what-are-the-mle-estimates-of-a-and-b">
+     Suppose you draw
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     samples from a uniform distribution,
+     <span class="math notranslate nohighlight">
+      \(U(a,b)\)
+     </span>
+     . What are the MLE estimates of
+     <span class="math notranslate nohighlight">
+      \(a\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(b\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-x-y-sim-u-0-1-be-independent-what-is-the-expected-value-of-max-x-y-todo">
+     Let
+     <span class="math notranslate nohighlight">
+      \(X,Y\sim U(0,1)\)
+     </span>
+     be independent, what is the expected value of
+     <span class="math notranslate nohighlight">
+      \(\max(X,Y)\)
+     </span>
+     ? TODO
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Probability & Statistics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warm-ups">
+   Warm-Ups
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-mean-of-a-random-variable-how-is-it-computed">
+     What is the mean of a random variable? How is it computed?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-variance-of-a-random-variable">
+     What is the variance of a random variable?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-and-how-do-expected-value-and-variance-add-the-is-what-is-mathbb-e-ax-by-and-text-var-ax-by">
+     When and how do expected value and variance add? The is, what is
+     <span class="math notranslate nohighlight">
+      \(\mathbb{E}(aX+bY)\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(\text{Var}(aX+bY)\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-bayes-rule">
+     What is Bayes Rule?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-it-mean-for-two-events-to-independent">
+     What does it mean for two events to independent?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-law-of-total-probability">
+     What is the Law of Total Probability?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-probability-mass-function-pmf-probability-density-function-pdf-cumulative-distribution-function-cdf">
+     What is a probability mass function (pmf)? probability density function (pdf)? Cumulative distribution function (cdf)?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-the-relationships-between-pdfs-and-cdfs-what-properties-do-they-have">
+     What are the relationships between pdfs and cdfs? What properties do they have?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-bernoulli-trial-what-is-its-mean-and-variance">
+     What is a Bernoulli Trial? What is its mean and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance">
+     What is the binomial distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Poisson distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-uniform-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Uniform distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Geometric distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Exponential distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-normal-distribution-what-are-its-parameters-mean-and-variance">
+     What is the Normal distribution? What are its parameters, mean, and variance?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-covariance-what-about-the-correlation-rho-between-x-and-y">
+     What is covariance? What about the correlation
+     <span class="math notranslate nohighlight">
+      \(\rho\)
+     </span>
+     between
+     <span class="math notranslate nohighlight">
+      \(X\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(Y\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-law-of-large-numbers">
+     What is the Law of Large Numbers?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#state-the-central-limit-theorem">
+     State the Central Limit Theorem.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-type-i-and-type-ii-errors-how-do-they-relate-to-the-significance-level-alpha-and-the-power-level-beta">
+     What are Type I and Type II errors? How do they relate to the significance level
+     <span class="math notranslate nohighlight">
+      \(\alpha\)
+     </span>
+     and the power level
+     <span class="math notranslate nohighlight">
+      \(\beta\)
+     </span>
+     ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability">
+   Probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing">
+     If you roll 3 dice in order, what is the probability that the values will be strictly decreasing?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-disease-screening-test-has-a-95-accuracy-for-detecting-the-disease-and-a-2-false-positive-rate-the-odds-that-a-person-has-the-disease-are-1-if-a-person-tests-positive-what-are-the-odds-they-have-the-disease">
+     A disease screening test has a 95% accuracy for detecting the disease, and a 2% false positive rate. The odds that a person has the disease are 1%. If a person tests positive, what are the odds they have the disease?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-probability-that-a-seven-game-series-goes-to-7-games">
+     What is the probability that a seven-game series goes to 7 games?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#say-you-draw-a-circle-and-choose-two-chords-at-random-what-is-the-probability-that-those-chords-will-intersect">
+     Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#there-are-50-cards-of-5-different-colors-each-color-has-cards-numbered-between-1-to-10-you-pick-2-cards-at-random-what-is-the-probability-that-they-are-not-of-same-color-and-also-not-of-same-number">
+     There are 50 cards of 5 different colors. Each color has cards numbered between 1 to 10. You pick 2 cards at random. What is the probability that they are not of same color and also not of same number?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-expected-number-of-rolls-needed-to-see-all-6-sides-of-a-fair-die-todo">
+     What is the expected number of rolls needed to see all 6 sides of a fair die? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-friends-in-seattle-each-told-you-its-rainy-and-each-person-has-a-1-3-probability-of-lying-what-is-the-probability-that-seattle-is-rainy-assume-the-probability-of-rain-on-any-given-day-in-seattle-is-0-25">
+     Three friends in Seattle each told you it’s rainy, and each person has a 1/3 probability of lying. What is the probability that Seattle is rainy? Assume the probability of rain on any given day in Seattle is 0.25.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-ants-are-sitting-at-the-corners-of-an-equilateral-triangle-each-ant-randomly-picks-a-direction-and-starts-moving-along-the-edge-of-the-triangle-what-is-the-probability-that-none-of-the-ants-collide-now-what-if-it-is-k-ants-on-all-k-corners-of-an-equilateral-polygon">
+     Three ants are sitting at the corners of an equilateral triangle. Each ant randomly picks a direction and starts moving along the edge of the triangle. What is the probability that none of the ants collide? Now, what if it is
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     ants on all
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     corners of an equilateral polygon?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-many-cards-would-you-expect-to-draw-from-a-standard-deck-before-seeing-the-first-ace-todo">
+     How many cards would you expect to draw from a standard deck before seeing the first ace? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#say-you-are-given-an-unfair-coin-with-an-unknown-bias-towards-heads-or-tails-how-can-you-generate-fair-odds-using-this-coin">
+     Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-fair-die-is-rolled-n-times-what-is-the-probability-that-the-largest-number-rolled-is-r-for-each-r-in-1-ldots-6-todo">
+     A fair die is rolled
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     times. What is the probability that the largest number rolled is
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
+     , for each
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
+     in
+     <span class="math notranslate nohighlight">
+      \(1,\ldots,6\)
+     </span>
+     ? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-x-y-sim-n-0-1-be-independent-gaussians-what-is-p-2x-y">
+     Let
+     <span class="math notranslate nohighlight">
+      \(X,Y\sim N(0,1)\)
+     </span>
+     be independent Gaussians, what is
+     <span class="math notranslate nohighlight">
+      \(P(2X&gt;Y)\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#there-are-two-groups-of-n-users-a-and-b-and-each-user-in-a-is-friends-with-those-in-b-and-vice-versa-each-user-in-a-will-randomly-choose-a-user-in-b-as-their-best-friend-and-each-user-in-b-will-randomly-choose-a-user-in-a-as-their-best-friend-if-two-people-have-chosen-each-other-they-are-mutual-best-friends-what-is-the-probability-that-there-will-be-no-mutual-best-friendships-todo">
+     There are two groups of
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics">
+   Statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive-the-expected-value-for-the-uniform-distribution-a-b">
+     Derive the expected value for the uniform distribution
+     <span class="math notranslate nohighlight">
+      \([a,b]\)
+     </span>
+     .
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-central-limit-theorem-why-is-it-useful-todo">
+     What is the Central Limit Theorem? Why is it useful?  TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-would-you-explain-a-confidence-interval-to-a-non-technical-audience-todo">
+     How would you explain a confidence interval to a non-technical audience? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe-p-values-in-laymans-terms-todo">
+     Describe p-values in layman’s terms. TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe-a-b-testing-what-are-some-common-pitfalls-todo">
+     Describe A/B testing. What are some common pitfalls? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-would-you-derive-a-confidence-interval-from-a-series-of-coin-tosses-todo">
+     How would you derive a confidence interval from a series of coin tosses? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#you-sample-from-a-uniform-distribution-0-d-n-times-what-is-your-best-estimate-of-d">
+     You sample from a uniform distribution
+     <span class="math notranslate nohighlight">
+      \([0, d]\)
+     </span>
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     times. What is your best estimate of
+     <span class="math notranslate nohighlight">
+      \(d\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#you-are-drawing-from-a-normally-distributed-random-variable-x-sim-n-0-1-once-a-day-what-is-the-approximate-expected-number-of-days-until-you-get-a-value-of-more-than-2">
+     You are drawing from a normally distributed random variable
+     <span class="math notranslate nohighlight">
+      \(X \sim N(0, 1)\)
+     </span>
+     once a day. What is the approximate expected number of days until you get a value of more than 2?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive-the-expectation-for-a-geometric-distributed-random-variable">
+     Derive the expectation for a geometric distributed random variable.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#given-a-random-bernoulli-trial-generator-how-do-you-return-a-value-sampled-from-a-normal-distribution-todo">
+     Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution.  TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-mle-what-about-map-how-do-they-compare">
+     What is MLE? What about MAP? How do they compare?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explain-hypothesis-testing-todo">
+     Explain hypothesis testing.  TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-z-test-what-is-a-t-test-when-would-you-use-each-todo">
+     What is a
+     <span class="math notranslate nohighlight">
+      \(z\)
+     </span>
+     -test? What is a
+     <span class="math notranslate nohighlight">
+      \(t\)
+     </span>
+     -test? When would you use each? TODO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suppose-you-draw-n-samples-from-a-uniform-distribution-u-a-b-what-are-the-mle-estimates-of-a-and-b">
+     Suppose you draw
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     samples from a uniform distribution,
+     <span class="math notranslate nohighlight">
+      \(U(a,b)\)
+     </span>
+     . What are the MLE estimates of
+     <span class="math notranslate nohighlight">
+      \(a\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(b\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-x-y-sim-u-0-1-be-independent-what-is-the-expected-value-of-max-x-y-todo">
+     Let
+     <span class="math notranslate nohighlight">
+      \(X,Y\sim U(0,1)\)
+     </span>
+     be independent, what is the expected value of
+     <span class="math notranslate nohighlight">
+      \(\max(X,Y)\)
+     </span>
+     ? TODO
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="probability-statistics">
+<h1>Probability &amp; Statistics<a class="headerlink" href="#probability-statistics" title="Permalink to this headline">#</a></h1>
+<p>Clicking on a question in the list below will take you to the solution, clicking on the question header will bring you back to this list of questions.</p>
+<p><strong>Contributing</strong> Have ideas for more questions? See the <a class="reference internal" href="../intro.html#contributing-label"><span class="std std-ref">contributing section</span></a>.</p>
+<p><span style="font-size:2em;">Questions</span></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#warm-ups" id="id1">Warm-Ups</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-the-mean-of-a-random-variable-how-is-it-computed" id="id2">What is the mean of a random variable? How is it computed?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-variance-of-a-random-variable" id="id3">What is the variance of a random variable?</a></p></li>
+<li><p><a class="reference internal" href="#when-and-how-do-expected-value-and-variance-add-the-is-what-is-mathbb-e-ax-by-and-text-var-ax-by" id="id4">When and how do expected value and variance add? The is, what is <span class="math notranslate nohighlight">\(\mathbb{E}(aX+bY)\)</span> and <span class="math notranslate nohighlight">\(\text{Var}(aX+bY)\)</span>?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-bayes-rule" id="id5">What is Bayes Rule?</a></p></li>
+<li><p><a class="reference internal" href="#what-does-it-mean-for-two-events-to-independent" id="id6">What does it mean for two events to independent?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-law-of-total-probability" id="id7">What is the Law of Total Probability?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-a-probability-mass-function-pmf-probability-density-function-pdf-cumulative-distribution-function-cdf" id="id8">What is a probability mass function (pmf)? probability density function (pdf)? Cumulative distribution function (cdf)?</a></p></li>
+<li><p><a class="reference internal" href="#what-are-the-relationships-between-pdfs-and-cdfs-what-properties-do-they-have" id="id9">What are the relationships between pdfs and cdfs? What properties do they have?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-a-bernoulli-trial-what-is-its-mean-and-variance" id="id10">What is a Bernoulli Trial? What is its mean and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance" id="id11">What is the binomial distribution? What are its parameters, mean, and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance" id="id12">What is the Poisson distribution? What are its parameters, mean, and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-uniform-distribution-what-are-its-parameters-mean-and-variance" id="id13">What is the Uniform distribution? What are its parameters, mean, and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance" id="id14">What is the Geometric distribution? What are its parameters, mean, and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance" id="id15">What is the Exponential distribution? What are its parameters, mean, and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-normal-distribution-what-are-its-parameters-mean-and-variance" id="id16">What is the Normal distribution? What are its parameters, mean, and variance?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-covariance-what-about-the-correlation-rho-between-x-and-y" id="id17">What is covariance? What about the correlation <span class="math notranslate nohighlight">\(\rho\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-law-of-large-numbers" id="id18">What is the Law of Large Numbers?</a></p></li>
+<li><p><a class="reference internal" href="#state-the-central-limit-theorem" id="id19">State the Central Limit Theorem.</a></p></li>
+<li><p><a class="reference internal" href="#what-are-type-i-and-type-ii-errors-how-do-they-relate-to-the-significance-level-alpha-and-the-power-level-beta" id="id20">What are Type I and Type II errors? How do they relate to the significance level <span class="math notranslate nohighlight">\(\alpha\)</span> and the power level <span class="math notranslate nohighlight">\(\beta\)</span>?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#probability" id="id21">Probability</a></p>
+<ul>
+<li><p><a class="reference internal" href="#if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing" id="id22">If you roll 3 dice in order, what is the probability that the values will be strictly decreasing?</a></p></li>
+<li><p><a class="reference internal" href="#a-disease-screening-test-has-a-95-accuracy-for-detecting-the-disease-and-a-2-false-positive-rate-the-odds-that-a-person-has-the-disease-are-1-if-a-person-tests-positive-what-are-the-odds-they-have-the-disease" id="id23">A disease screening test has a 95% accuracy for detecting the disease, and a 2% false positive rate. The odds that a person has the disease are 1%. If a person tests positive, what are the odds they have the disease?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-probability-that-a-seven-game-series-goes-to-7-games" id="id24">What is the probability that a seven-game series goes to 7 games?</a></p></li>
+<li><p><a class="reference internal" href="#say-you-draw-a-circle-and-choose-two-chords-at-random-what-is-the-probability-that-those-chords-will-intersect" id="id25">Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect?</a></p></li>
+<li><p><a class="reference internal" href="#there-are-50-cards-of-5-different-colors-each-color-has-cards-numbered-between-1-to-10-you-pick-2-cards-at-random-what-is-the-probability-that-they-are-not-of-same-color-and-also-not-of-same-number" id="id26">There are 50 cards of 5 different colors. Each color has cards numbered between 1 to 10. You pick 2 cards at random. What is the probability that they are not of same color and also not of same number?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-expected-number-of-rolls-needed-to-see-all-6-sides-of-a-fair-die-todo" id="id27">What is the expected number of rolls needed to see all 6 sides of a fair die? TODO</a></p></li>
+<li><p><a class="reference internal" href="#three-friends-in-seattle-each-told-you-its-rainy-and-each-person-has-a-1-3-probability-of-lying-what-is-the-probability-that-seattle-is-rainy-assume-the-probability-of-rain-on-any-given-day-in-seattle-is-0-25" id="id28">Three friends in Seattle each told you it’s rainy, and each person has a 1/3 probability of lying. What is the probability that Seattle is rainy? Assume the probability of rain on any given day in Seattle is 0.25.</a></p></li>
+<li><p><a class="reference internal" href="#three-ants-are-sitting-at-the-corners-of-an-equilateral-triangle-each-ant-randomly-picks-a-direction-and-starts-moving-along-the-edge-of-the-triangle-what-is-the-probability-that-none-of-the-ants-collide-now-what-if-it-is-k-ants-on-all-k-corners-of-an-equilateral-polygon" id="id29">Three ants are sitting at the corners of an equilateral triangle. Each ant randomly picks a direction and starts moving along the edge of the triangle. What is the probability that none of the ants collide? Now, what if it is <span class="math notranslate nohighlight">\(k\)</span> ants on all <span class="math notranslate nohighlight">\(k\)</span> corners of an equilateral polygon?</a></p></li>
+<li><p><a class="reference internal" href="#how-many-cards-would-you-expect-to-draw-from-a-standard-deck-before-seeing-the-first-ace-todo" id="id30">How many cards would you expect to draw from a standard deck before seeing the first ace? TODO</a></p></li>
+<li><p><a class="reference internal" href="#say-you-are-given-an-unfair-coin-with-an-unknown-bias-towards-heads-or-tails-how-can-you-generate-fair-odds-using-this-coin" id="id31">Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?</a></p></li>
+<li><p><a class="reference internal" href="#a-fair-die-is-rolled-n-times-what-is-the-probability-that-the-largest-number-rolled-is-r-for-each-r-in-1-ldots-6-todo" id="id32">A fair die is rolled <span class="math notranslate nohighlight">\(n\)</span> times. What is the probability that the largest number rolled is <span class="math notranslate nohighlight">\(r\)</span>, for each <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(1,\ldots,6\)</span>? TODO</a></p></li>
+<li><p><a class="reference internal" href="#let-x-y-sim-n-0-1-be-independent-gaussians-what-is-p-2x-y" id="id33">Let <span class="math notranslate nohighlight">\(X,Y\sim N(0,1)\)</span> be independent Gaussians, what is <span class="math notranslate nohighlight">\(P(2X&gt;Y)\)</span>?</a></p></li>
+<li><p><a class="reference internal" href="#there-are-two-groups-of-n-users-a-and-b-and-each-user-in-a-is-friends-with-those-in-b-and-vice-versa-each-user-in-a-will-randomly-choose-a-user-in-b-as-their-best-friend-and-each-user-in-b-will-randomly-choose-a-user-in-a-as-their-best-friend-if-two-people-have-chosen-each-other-they-are-mutual-best-friends-what-is-the-probability-that-there-will-be-no-mutual-best-friendships-todo" id="id34">There are two groups of <span class="math notranslate nohighlight">\(n\)</span> users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#statistics" id="id35">Statistics</a></p>
+<ul>
+<li><p><a class="reference internal" href="#derive-the-expected-value-for-the-uniform-distribution-a-b" id="id36">Derive the expected value for the uniform distribution <span class="math notranslate nohighlight">\([a,b]\)</span>.</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-central-limit-theorem-why-is-it-useful-todo" id="id37">What is the Central Limit Theorem? Why is it useful?  TODO</a></p></li>
+<li><p><a class="reference internal" href="#how-would-you-explain-a-confidence-interval-to-a-non-technical-audience-todo" id="id38">How would you explain a confidence interval to a non-technical audience? TODO</a></p></li>
+<li><p><a class="reference internal" href="#describe-p-values-in-laymans-terms-todo" id="id39">Describe p-values in layman’s terms. TODO</a></p></li>
+<li><p><a class="reference internal" href="#describe-a-b-testing-what-are-some-common-pitfalls-todo" id="id40">Describe A/B testing. What are some common pitfalls? TODO</a></p></li>
+<li><p><a class="reference internal" href="#how-would-you-derive-a-confidence-interval-from-a-series-of-coin-tosses-todo" id="id41">How would you derive a confidence interval from a series of coin tosses? TODO</a></p></li>
+<li><p><a class="reference internal" href="#you-sample-from-a-uniform-distribution-0-d-n-times-what-is-your-best-estimate-of-d" id="id42">You sample from a uniform distribution <span class="math notranslate nohighlight">\([0, d]\)</span> <span class="math notranslate nohighlight">\(n\)</span> times. What is your best estimate of <span class="math notranslate nohighlight">\(d\)</span>?</a></p></li>
+<li><p><a class="reference internal" href="#you-are-drawing-from-a-normally-distributed-random-variable-x-sim-n-0-1-once-a-day-what-is-the-approximate-expected-number-of-days-until-you-get-a-value-of-more-than-2" id="id43">You are drawing from a normally distributed random variable <span class="math notranslate nohighlight">\(X \sim N(0, 1)\)</span> once a day. What is the approximate expected number of days until you get a value of more than 2?</a></p></li>
+<li><p><a class="reference internal" href="#derive-the-expectation-for-a-geometric-distributed-random-variable" id="id44">Derive the expectation for a geometric distributed random variable.</a></p></li>
+<li><p><a class="reference internal" href="#given-a-random-bernoulli-trial-generator-how-do-you-return-a-value-sampled-from-a-normal-distribution-todo" id="id45">Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution.  TODO</a></p></li>
+<li><p><a class="reference internal" href="#what-is-mle-what-about-map-how-do-they-compare" id="id46">What is MLE? What about MAP? How do they compare?</a></p></li>
+<li><p><a class="reference internal" href="#explain-hypothesis-testing-todo" id="id47">Explain hypothesis testing.  TODO</a></p></li>
+<li><p><a class="reference internal" href="#what-is-a-z-test-what-is-a-t-test-when-would-you-use-each-todo" id="id48">What is a <span class="math notranslate nohighlight">\(z\)</span>-test? What is a <span class="math notranslate nohighlight">\(t\)</span>-test? When would you use each? TODO</a></p></li>
+<li><p><a class="reference internal" href="#suppose-you-draw-n-samples-from-a-uniform-distribution-u-a-b-what-are-the-mle-estimates-of-a-and-b" id="id49">Suppose you draw <span class="math notranslate nohighlight">\(n\)</span> samples from a uniform distribution, <span class="math notranslate nohighlight">\(U(a,b)\)</span>. What are the MLE estimates of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>?</a></p></li>
+<li><p><a class="reference internal" href="#let-x-y-sim-u-0-1-be-independent-what-is-the-expected-value-of-max-x-y-todo" id="id50">Let <span class="math notranslate nohighlight">\(X,Y\sim U(0,1)\)</span> be independent, what is the expected value of <span class="math notranslate nohighlight">\(\max(X,Y)\)</span>? TODO</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- Add a margin note using the following code snippet -->
+<!-- 
+````{margin}
+```{note}
+Here's my note!
+```
+````
+-->
+<section id="warm-ups">
+<h2><a class="toc-backref" href="#id1">Warm-Ups</a><a class="headerlink" href="#warm-ups" title="Permalink to this headline">#</a></h2>
+<section id="what-is-the-mean-of-a-random-variable-how-is-it-computed">
+<h3><a class="toc-backref" href="#id2">What is the mean of a random variable? How is it computed?</a><a class="headerlink" href="#what-is-the-mean-of-a-random-variable-how-is-it-computed" title="Permalink to this headline">#</a></h3>
+<p>The expected value, <span class="math notranslate nohighlight">\(\mathbb{E}(X)\)</span> is the mean, for a discrete variable,</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}(X) = \sum_x x\mathbb{P}(X=x)\]</div>
+<p>and for continuous variables</p>
+<div class="math notranslate nohighlight">
+\[ \mathbb{E}(X) = \int_{-\infty}^\infty xp(x)dx\]</div>
+</section>
+<section id="what-is-the-variance-of-a-random-variable">
+<h3><a class="toc-backref" href="#id3">What is the variance of a random variable?</a><a class="headerlink" href="#what-is-the-variance-of-a-random-variable" title="Permalink to this headline">#</a></h3>
+<p>The variance is a measure of spread of a random variable, defined as</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[(X-\mu_X)^2]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu_X\)</span> is the mean of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</section>
+<section id="when-and-how-do-expected-value-and-variance-add-the-is-what-is-mathbb-e-ax-by-and-text-var-ax-by">
+<h3><a class="toc-backref" href="#id4">When and how do expected value and variance add? The is, what is <span class="math notranslate nohighlight">\(\mathbb{E}(aX+bY)\)</span> and <span class="math notranslate nohighlight">\(\text{Var}(aX+bY)\)</span>?</a><a class="headerlink" href="#when-and-how-do-expected-value-and-variance-add-the-is-what-is-mathbb-e-ax-by-and-text-var-ax-by" title="Permalink to this headline">#</a></h3>
+<p>Expectation is always linear, that is <span class="math notranslate nohighlight">\(\mathbb{E}(aX+bY) = a\mathbb{E}(X)+b\mathbb{Y}\)</span>.</p>
+<p>Variance only adds when variables are independent, and scalar come out with squared since</p>
+<div class="math notranslate nohighlight">
+\[\text{Var}(aX) = \mathbb{E}[(aX-a\mu_X)^2] = \mathbb{E}[a^2(X-\mu_X)^2] =  a^2\text{Var}(X)\]</div>
+<p>so <strong>if <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent</strong>,</p>
+<div class="math notranslate nohighlight">
+\[\text{Var}(aX+bY) = a^2\text{Var}(X)+b^2\text{Var}(Y).\]</div>
+<p>A counterexample for the additivity of variance when the variables are dependent is <span class="math notranslate nohighlight">\(Y=-X\)</span>, then <span class="math notranslate nohighlight">\(\text{Var}(X+Y) = \text{Var}(0)=0\neq 2\text{Var}(X)\)</span> for any non-constant <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</section>
+<section id="what-is-bayes-rule">
+<h3><a class="toc-backref" href="#id5">What is Bayes Rule?</a><a class="headerlink" href="#what-is-bayes-rule" title="Permalink to this headline">#</a></h3>
+<p>Bayes Rules: For two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ P(A|B) = \frac{P(B|A)P(A)}{P(B)} \]</div>
+</section>
+<section id="what-does-it-mean-for-two-events-to-independent">
+<h3><a class="toc-backref" href="#id6">What does it mean for two events to independent?</a><a class="headerlink" href="#what-does-it-mean-for-two-events-to-independent" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(A,B\)</span> are independent <span class="math notranslate nohighlight">\(\iff\)</span> <span class="math notranslate nohighlight">\(P(A\text{ and }B) = P(A)P(B)\)</span></p>
+</section>
+<section id="what-is-the-law-of-total-probability">
+<h3><a class="toc-backref" href="#id7">What is the Law of Total Probability?</a><a class="headerlink" href="#what-is-the-law-of-total-probability" title="Permalink to this headline">#</a></h3>
+<p>Given a collection of disjoint events, <span class="math notranslate nohighlight">\(B_1,\ldots, B_n\)</span> with <span class="math notranslate nohighlight">\(B_1\sqcup \cdots \sqcup B_n\)</span> covering the entire sample space,</p>
+<div class="math notranslate nohighlight">
+\[ P(A) = P(A|B_1)+\cdots + P(A|B_n) \]</div>
+</section>
+<section id="what-is-a-probability-mass-function-pmf-probability-density-function-pdf-cumulative-distribution-function-cdf">
+<h3><a class="toc-backref" href="#id8">What is a probability mass function (pmf)? probability density function (pdf)? Cumulative distribution function (cdf)?</a><a class="headerlink" href="#what-is-a-probability-mass-function-pmf-probability-density-function-pdf-cumulative-distribution-function-cdf" title="Permalink to this headline">#</a></h3>
+<p>For a discrete random variable <span class="math notranslate nohighlight">\(X\)</span>, the probability mass function is</p>
+<div class="math notranslate nohighlight">
+\[ p(a) = \mathbb{P}(X=a)\]</div>
+<p>For a continuous random variable, <span class="math notranslate nohighlight">\(\mathbb{P}(X=a)=0\)</span>, so we define the continuous analog, the probability density function such that</p>
+<div class="math notranslate nohighlight">
+\[ \mathbb{P}(a\leq X\leq b) = \int_a^b p(x)dx\]</div>
+<p>The cumulative distribution function, defined for both continuous and discrete R.V.s, is</p>
+<div class="math notranslate nohighlight">
+\[ F(a) = \mathbb{P}(X\leq a)\]</div>
+</section>
+<section id="what-are-the-relationships-between-pdfs-and-cdfs-what-properties-do-they-have">
+<h3><a class="toc-backref" href="#id9">What are the relationships between pdfs and cdfs? What properties do they have?</a><a class="headerlink" href="#what-are-the-relationships-between-pdfs-and-cdfs-what-properties-do-they-have" title="Permalink to this headline">#</a></h3>
+<p>Given a pdf <span class="math notranslate nohighlight">\(p\)</span> and a cdf <span class="math notranslate nohighlight">\(F\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ F(a) = \mathbb{P}(X\leq a) = \int_{-\infty}^a p(x)dx \]</div>
+<p>Some properties of pdfs:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(x) \geq 0\)</span> for all <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(x)\)</span> may be greater than <span class="math notranslate nohighlight">\(1\)</span> (unlike a pmf)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^\infty p(x)dx=1\)</span></p></li>
+</ul>
+<p>Some properties of cdfs:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F(x)\in [0,1]\)</span> with <span class="math notranslate nohighlight">\(\lim_{x\rightarrow \infty}F(x) = 1\)</span> and <span class="math notranslate nohighlight">\(\lim_{x\rightarrow -\infty}F(x) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F\)</span> is monotonically increasing</p></li>
+<li><p><span class="math notranslate nohighlight">\(F\)</span> is continuous from the right (but not necessarily the left)</p></li>
+</ul>
+</section>
+<section id="what-is-a-bernoulli-trial-what-is-its-mean-and-variance">
+<h3><a class="toc-backref" href="#id10">What is a Bernoulli Trial? What is its mean and variance?</a><a class="headerlink" href="#what-is-a-bernoulli-trial-what-is-its-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>A Bernoulli trial is a single experiment with a “success” outcome occuring with probability <span class="math notranslate nohighlight">\(p\)</span> (ex: coin flip).</p>
+<p>The mean is given by</p>
+<div class="math notranslate nohighlight">
+\[ \mathbb{E}(X) = 0(1-p) + 1(p) =p \]</div>
+<p>The variance is</p>
+<div class="math notranslate nohighlight">
+\[ \mathbb{E}((X-p)^2) = (0-p)^2(1-p) + (1-p)^2(p) = p(1-p)\]</div>
+</section>
+<section id="what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance">
+<h3><a class="toc-backref" href="#id11">What is the binomial distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-binomial-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>Given <span class="math notranslate nohighlight">\(n\)</span> Bernoulli trials, let <span class="math notranslate nohighlight">\(X\)</span> be the number of successes that occured, then <span class="math notranslate nohighlight">\(X\)</span> has a binomial distribution, <span class="math notranslate nohighlight">\(X\sim Binom(n,p)\)</span>.</p>
+<p>This is a <strong>discrete</strong> distribution, with probability mass function
+$<span class="math notranslate nohighlight">\(P(X=k) = {n \choose k} p^{k}(1-p)^{n-k}.\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\({n \choose k}=\frac{n!}{k!(n-k)!}\)</span> is the binomial coeffient.</p>
+<p>The expected value is the sum of the expected value for each Bernoulli trial, which is <span class="math notranslate nohighlight">\(p\)</span>, so <span class="math notranslate nohighlight">\(\mathbb{E}(X)=np\)</span>. Similarly, given the indepedence of the trials, the variance is <span class="math notranslate nohighlight">\(\text{Var}(X) = np(1-p)\)</span>.</p>
+</section>
+<section id="what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance">
+<h3><a class="toc-backref" href="#id12">What is the Poisson distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-poisson-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>Given random events happening at a known average rate, the Poisson distribution model the probability of a given number of these random events occuring in a fixed interval (usually time). If <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span> is the average number of events occuring in the time period, and <span class="math notranslate nohighlight">\(X\)</span> is the number of these events occuring in an interval,</p>
+<div class="math notranslate nohighlight">
+\[ \mathbb{P}(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}.\]</div>
+<p>Both the mean and variance of <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</section>
+<section id="what-is-the-uniform-distribution-what-are-its-parameters-mean-and-variance">
+<h3><a class="toc-backref" href="#id13">What is the Uniform distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-uniform-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>For a discrete uniform variable on a set <span class="math notranslate nohighlight">\(\{x_1,\ldots, x_n\}\)</span>, it has probability <span class="math notranslate nohighlight">\(1/n\)</span> of taking on each <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
+<p>For a continuous uniform variable, <span class="math notranslate nohighlight">\(U(a,b)\)</span>, it has a constant probability density function on the interval <span class="math notranslate nohighlight">\([a,b]\)</span>, making all values “equally likely”. In particular, <span class="math notranslate nohighlight">\(p(x) = \frac{1}{b-a}\)</span> on <span class="math notranslate nohighlight">\([a,b]\)</span> and is 0 outside the interval.</p>
+<p>The mean is the average of the end points, <span class="math notranslate nohighlight">\(\frac{a+b}{2}\)</span> and the variance is <span class="math notranslate nohighlight">\(\frac{1}{12}(b-a)^2\)</span> (derived from the integral <span class="math notranslate nohighlight">\(\int_a^b \left(x-\frac{a+b}{2}\right)^2\frac{1}{b-a}dx \)</span>).</p>
+</section>
+<section id="what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance">
+<h3><a class="toc-backref" href="#id14">What is the Geometric distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-geometric-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>Given a sequence of repeated Bernoulli trials with probablity <span class="math notranslate nohighlight">\(p\)</span>, the geometric distribution models the number of trials needed to get the first success. Let <span class="math notranslate nohighlight">\(X\)</span> be the number of attempts until a success, then <span class="math notranslate nohighlight">\(\mathbb{P}(X) = (1-p)^{k-1}p\)</span> for <span class="math notranslate nohighlight">\(k\geq 1\)</span>. The mean is <span class="math notranslate nohighlight">\(\mathbb{E}(X) = 1/p\)</span>, via the following derivation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\mathbb{E}(X) &amp;= \sum_{k=0}^\infty k(1-p)^{k-1}p  = p\sum_{k=0}^\infty k(1-p)^{k-1} =p \sum_{k=0}^\infty -\frac{d}{dp}[(1-p)^k] \\
+&amp;= p\frac{d}{dp}\left[-\sum_{k=0}^\infty (1-p)^k\right] = -p\frac{d}{dp}(\frac{1}{p}) = -p(-\frac{1}{p^2}) = \frac{1}{p}
+\end{align*}\end{split}\]</div>
+<p>And the variance is <span class="math notranslate nohighlight">\(\text{Var}(X) = \frac{1-p}{p^2}\)</span>.</p>
+</section>
+<section id="what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance">
+<h3><a class="toc-backref" href="#id15">What is the Exponential distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-exponential-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>The exponential distribution is the probability distribution of the time between events in a Poisson point process, a process where events with fixed average rate occur independently. It is analagous to the geometric distribution (discrete).</p>
+<p><strong>PDF:</strong>  <span class="math notranslate nohighlight">\(f(x)=\lambda e^{-\lambda x}\)</span>, <strong>CDF:</strong> <span class="math notranslate nohighlight">\(F(x) = 1-e^{-\lambda x}\)</span>. Both for <span class="math notranslate nohighlight">\(x\geq 0\)</span> and <span class="math notranslate nohighlight">\(0\)</span> when <span class="math notranslate nohighlight">\(x&lt;0\)</span>,</p>
+<p>It has mean <span class="math notranslate nohighlight">\(\frac{1}{\lambda}\)</span>, with variance <span class="math notranslate nohighlight">\(\frac{1}{\lambda^2}\)</span>. The former is from the integration of <span class="math notranslate nohighlight">\(\int_0^\infty x\lambda e^{-\lambda x}dx\)</span> using integration of parts. Integrating <span class="math notranslate nohighlight">\(\int_0^\infty x^2\lambda e^{-\lambda x}dx\)</span> by parts twice gives the variance.</p>
+</section>
+<section id="what-is-the-normal-distribution-what-are-its-parameters-mean-and-variance">
+<h3><a class="toc-backref" href="#id16">What is the Normal distribution? What are its parameters, mean, and variance?</a><a class="headerlink" href="#what-is-the-normal-distribution-what-are-its-parameters-mean-and-variance" title="Permalink to this headline">#</a></h3>
+<p>The Normal, or Gaussian, Distribution has the bell curve probability density function, with the highest probability closest to the mean, and lower probabilities farther and farther from the center. With a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>,</p>
+<p><strong>PDF</strong> <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp(\frac{-(x-\mu)^2}{2\sigma^2})\)</span></p>
+<p>the CDF is expressed in terms on the integral.</p>
+<p><img alt="Gaussian Distribution" src="../_images/gaussian_dist.png" />
+<a class="reference external" href="https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2">Image Source</a></p>
+</section>
+<section id="what-is-covariance-what-about-the-correlation-rho-between-x-and-y">
+<h3><a class="toc-backref" href="#id17">What is covariance? What about the correlation <span class="math notranslate nohighlight">\(\rho\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>?</a><a class="headerlink" href="#what-is-covariance-what-about-the-correlation-rho-between-x-and-y" title="Permalink to this headline">#</a></h3>
+<p>Covariance is a measure of how two distributions vary with respect to each other. It is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{Cov}(X,Y)  = \mathbb{E}[(X-\mu_X)(Y-\mu_Y)] = \mathbb{E}[XY] - \mu_X\mu_Y\]</div>
+<p>When <span class="math notranslate nohighlight">\(X=Y\)</span>, this is the variance of <span class="math notranslate nohighlight">\(X\)</span>. When <span class="math notranslate nohighlight">\(X,Y\)</span> are independent, <span class="math notranslate nohighlight">\(\mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y]\)</span> so the covariance is 0.</p>
+<p>The magnitude of covariance depends on the units of <span class="math notranslate nohighlight">\(X\)</span> and of <span class="math notranslate nohighlight">\(Y\)</span>, to normalize this measure of the relationship, we define the correlation</p>
+<div class="math notranslate nohighlight">
+\[\rho(X,Y) = \frac{\text{Cov}(X,Y)}{\sigma_X\sigma_Y}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_Z = \sqrt{\text{Var}(Z)}\)</span></p>
+</section>
+<section id="what-is-the-law-of-large-numbers">
+<h3><a class="toc-backref" href="#id18">What is the Law of Large Numbers?</a><a class="headerlink" href="#what-is-the-law-of-large-numbers" title="Permalink to this headline">#</a></h3>
+<p>**Law of Larger Numbers:**Let <span class="math notranslate nohighlight">\(X_i\)</span> be i.i.d. random variables, then the sample mean converges to the true mean, i.e.
+$<span class="math notranslate nohighlight">\( \lim_{n\rightarrow \infty} \frac{1}{n}\sum_{k=1}^n X_k = \mathbb{E}[X]\)</span>$</p>
+<p>Note that the variance for <span class="math notranslate nohighlight">\(X_i\)</span> need not be finite, although finite variance will converge faster.</p>
+</section>
+<section id="state-the-central-limit-theorem">
+<h3><a class="toc-backref" href="#id19">State the Central Limit Theorem.</a><a class="headerlink" href="#state-the-central-limit-theorem" title="Permalink to this headline">#</a></h3>
+<p>The central limit theorem says that as a sample of i.i.d. variables with finite mean and variance gets large, the sample mean approaches a normally distributed random variable. Crucially, this holds <em>regardless of the distribution of the</em> <span class="math notranslate nohighlight">\(X_i\)</span><em>s</em>. Formally,</p>
+<p><strong>Central Limit Theorem:</strong> Let <span class="math notranslate nohighlight">\(X_1,X_2,\ldots\)</span> be i.i.d. with <span class="math notranslate nohighlight">\(\mathbb{E}[X_i] = \mu\)</span> and <span class="math notranslate nohighlight">\(\text{Var}[X] = \sigma^2&lt;\infty\)</span>. Let <span class="math notranslate nohighlight">\(\bar{X}_n =\frac{1}{n}(X_1+\cdots + X_n)\)</span> be the sample mean, then as <span class="math notranslate nohighlight">\(n\rightarrow \infty\)</span>, we have <span class="math notranslate nohighlight">\(\bar{X}_n\rightarrow N(\mu, \frac{\sigma^2}{n})\)</span>.</p>
+</section>
+<section id="what-are-type-i-and-type-ii-errors-how-do-they-relate-to-the-significance-level-alpha-and-the-power-level-beta">
+<h3><a class="toc-backref" href="#id20">What are Type I and Type II errors? How do they relate to the significance level <span class="math notranslate nohighlight">\(\alpha\)</span> and the power level <span class="math notranslate nohighlight">\(\beta\)</span>?</a><a class="headerlink" href="#what-are-type-i-and-type-ii-errors-how-do-they-relate-to-the-significance-level-alpha-and-the-power-level-beta" title="Permalink to this headline">#</a></h3>
+<p><strong>Type I</strong> the probability of a false positive, that is the probability that we reject a null hypothesis that is true.</p>
+<p><strong>Type II</strong> the probability of a false negative, that is the probability that we fail to reject a null hypothesis which is false.</p>
+<p>The <strong>significance level, <span class="math notranslate nohighlight">\(\alpha\)</span></strong>, is the probability, <span class="math notranslate nohighlight">\(P(\text{Type I})\)</span>. For example, if <span class="math notranslate nohighlight">\(\alpha =0.05\)</span>, then the test has a 5% chance of a false positive.</p>
+<p>The <strong>power level, <span class="math notranslate nohighlight">\(\beta\)</span></strong>, is the probability of correctly rejecting a false null hypothesis, so <span class="math notranslate nohighlight">\(P(\text{Type II}) = 1-\beta\)</span>.</p>
+</section>
+</section>
+<section id="probability">
+<h2><a class="toc-backref" href="#id21">Probability</a><a class="headerlink" href="#probability" title="Permalink to this headline">#</a></h2>
+<section id="if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing">
+<h3><a class="toc-backref" href="#id22">If you roll 3 dice in order, what is the probability that the values will be strictly decreasing?</a><a class="headerlink" href="#if-you-roll-3-dice-in-order-what-is-the-probability-that-the-values-will-be-strictly-decreasing" title="Permalink to this headline">#</a></h3>
+<p>There are <span class="math notranslate nohighlight">\(6^3\)</span> possible rolls, all of which are equally likely. We can count the number of rolls that are strictly descreasing to get their probability.</p>
+<p>If the first roll is a 1 or 2, the sequence cannot be strictly decreasing.</p>
+<p>If the first roll is a 3, there is exactly 1 strictly decreasing sequence.</p>
+<p>If the first roll is a 4, there are 3 decreasing sequences (4-3-2, 4-3-1, 4-2-1).</p>
+<p>If the first roll is a 5, there are 6 decreasing sequences (5-4-3/2/1, 5-3-2/1, 5-2-1)</p>
+<p>If the first roll is a 6, there are 10 decreasing sequences (6-5-4/3/2/1, 6-4-3/2/1, 6-3-2/1. 6-2-1).</p>
+<p>Adding these possibilities up, there are 10+6+3+1 = 20 strictly decreasing rolls possible, so the probability that rolling 3 dice in order will produce one of these sequences is <span class="math notranslate nohighlight">\(20/6^3\)</span>.</p>
+<p>A general patten can be derived. Let <span class="math notranslate nohighlight">\(k\)</span> be the number of rolls and let <span class="math notranslate nohighlight">\(n\)</span> be the maximum allowed value of any roll, define <span class="math notranslate nohighlight">\(X(k,n)\)</span> be the number of strictly decreasing rolls possible. The problem asks for <span class="math notranslate nohighlight">\(X(3,6)\)</span>. This quanitity satisfies a recursive relation:</p>
+<div class="math notranslate nohighlight">
+\[ X(k,n) = X(k-1,1) + X(k-1, 2) + \cdots + X(k-1, n-1) \]</div>
+<p>since after the first roll (which could be <span class="math notranslate nohighlight">\(1,2,\ldots, n\)</span>), there are <span class="math notranslate nohighlight">\(k-1\)</span> rolls remaining, all of which must be less than the first roll value. Some base cases are <span class="math notranslate nohighlight">\(X(1,n)=n\)</span>, <span class="math notranslate nohighlight">\(X(k,1)=0\)</span> if <span class="math notranslate nohighlight">\(k&gt;1\)</span>, and <span class="math notranslate nohighlight">\(X(0,n) = 0\)</span>. Using this formulation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}X(3,6) &amp;= X(2,1)+ X(2,2)+X(2,3)+X(2,4)+X(2,5)\\
+&amp;= X(1,1) + [X(1,1)+\cdots+X(1,2)]\\
+&amp;\qquad+[X(1,1)+\cdots +X(1,3)]+[X(1,1)+\cdots +X(1,4)]\\
+&amp;= 4X(1,1)+3X(1,2)+2X(1,3)+X(1,4)\\
+&amp;= 4 + 3*2 + 2*3 + 4 = 20\end{align*}\end{split}\]</div>
+</section>
+<section id="a-disease-screening-test-has-a-95-accuracy-for-detecting-the-disease-and-a-2-false-positive-rate-the-odds-that-a-person-has-the-disease-are-1-if-a-person-tests-positive-what-are-the-odds-they-have-the-disease">
+<h3><a class="toc-backref" href="#id23">A disease screening test has a 95% accuracy for detecting the disease, and a 2% false positive rate. The odds that a person has the disease are 1%. If a person tests positive, what are the odds they have the disease?</a><a class="headerlink" href="#a-disease-screening-test-has-a-95-accuracy-for-detecting-the-disease-and-a-2-false-positive-rate-the-odds-that-a-person-has-the-disease-are-1-if-a-person-tests-positive-what-are-the-odds-they-have-the-disease" title="Permalink to this headline">#</a></h3>
+<p>This is a classic application of Bayes Theorem</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{P(B|A)P(A)}{P(B)}.\]</div>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the event that the patient has the disease, let <span class="math notranslate nohighlight">\(B\)</span> be the event that they test positive. Then <span class="math notranslate nohighlight">\(P(A) = 0.01\)</span>, and <span class="math notranslate nohighlight">\(P(B|A) = 0.95\)</span>. To compute <span class="math notranslate nohighlight">\(P(B)\)</span>, we split into cases
+$<span class="math notranslate nohighlight">\(P(B) = P(B|A)P(A) + P(B|A^C)P(A^C) = 0.95*0.01 + 0.02*0.99.\)</span>$</p>
+<p>Plugging in,</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{0.95*0.01}{0.95*0.01 + 0.02*0.99}\approx 0.324 = 32.4\%\]</div>
+</section>
+<section id="what-is-the-probability-that-a-seven-game-series-goes-to-7-games">
+<h3><a class="toc-backref" href="#id24">What is the probability that a seven-game series goes to 7 games?</a><a class="headerlink" href="#what-is-the-probability-that-a-seven-game-series-goes-to-7-games" title="Permalink to this headline">#</a></h3>
+<p>First, let’s make some simplifying (if slightly inaccurate) assumptions. Let each game be independent, with <span class="math notranslate nohighlight">\(p_A\)</span> the probability that Team A wins a game. Then the series will go to 7 games if during the first 6 games each team wins 3 games.</p>
+<p>This is a binomial distribution <span class="math notranslate nohighlight">\(X\sim Binom(p_A,6)\)</span> so the probability that the series goes to a seventh game is <span class="math notranslate nohighlight">\(P(X=3)={6 \choose 3} p_A^3 (1-p_A)^3\)</span>.</p>
+</section>
+<section id="say-you-draw-a-circle-and-choose-two-chords-at-random-what-is-the-probability-that-those-chords-will-intersect">
+<h3><a class="toc-backref" href="#id25">Say you draw a circle and choose two chords at random. What is the probability that those chords will intersect?</a><a class="headerlink" href="#say-you-draw-a-circle-and-choose-two-chords-at-random-what-is-the-probability-that-those-chords-will-intersect" title="Permalink to this headline">#</a></h3>
+<p>Any collection of 4 points, A, B, C, and D, is equally likely to be selected, and given those points the three chord arrangements, AB/CD, AC/BD, and AD/CB, are also equally likely. Only the configuration will result in crossing chords, so there is a 1/3 chance of the random chords intersecting.</p>
+</section>
+<section id="there-are-50-cards-of-5-different-colors-each-color-has-cards-numbered-between-1-to-10-you-pick-2-cards-at-random-what-is-the-probability-that-they-are-not-of-same-color-and-also-not-of-same-number">
+<h3><a class="toc-backref" href="#id26">There are 50 cards of 5 different colors. Each color has cards numbered between 1 to 10. You pick 2 cards at random. What is the probability that they are not of same color and also not of same number?</a><a class="headerlink" href="#there-are-50-cards-of-5-different-colors-each-color-has-cards-numbered-between-1-to-10-you-pick-2-cards-at-random-what-is-the-probability-that-they-are-not-of-same-color-and-also-not-of-same-number" title="Permalink to this headline">#</a></h3>
+<p>There are <span class="math notranslate nohighlight">\(50*49\)</span> possible pairs of cards. Fixing the first card of a pair, there are 9 remaining cards of the same color, and 4 remaining cards of the same value among the 49 cards remaining. So there are <span class="math notranslate nohighlight">\(49-9-4=36\)</span> cards that would give a pair satisfying the conditions. The probability is then <span class="math notranslate nohighlight">\(36/49\)</span>.</p>
+</section>
+<section id="what-is-the-expected-number-of-rolls-needed-to-see-all-6-sides-of-a-fair-die-todo">
+<h3><a class="toc-backref" href="#id27">What is the expected number of rolls needed to see all 6 sides of a fair die? TODO</a><a class="headerlink" href="#what-is-the-expected-number-of-rolls-needed-to-see-all-6-sides-of-a-fair-die-todo" title="Permalink to this headline">#</a></h3>
+<p><strong>Attempt 1</strong></p>
+<p>Could model the probability of not all 6 for each roll and sum. (Caution: be careful of double counting)</p>
+<p>Given <span class="math notranslate nohighlight">\(n\geq 6\)</span> rolls, the odds that all 6 faces are seen is the complement of the odds that not all faces are seen. Need some expression for this that we can sum over.</p>
+</section>
+<section id="three-friends-in-seattle-each-told-you-its-rainy-and-each-person-has-a-1-3-probability-of-lying-what-is-the-probability-that-seattle-is-rainy-assume-the-probability-of-rain-on-any-given-day-in-seattle-is-0-25">
+<h3><a class="toc-backref" href="#id28">Three friends in Seattle each told you it’s rainy, and each person has a 1/3 probability of lying. What is the probability that Seattle is rainy? Assume the probability of rain on any given day in Seattle is 0.25.</a><a class="headerlink" href="#three-friends-in-seattle-each-told-you-its-rainy-and-each-person-has-a-1-3-probability-of-lying-what-is-the-probability-that-seattle-is-rainy-assume-the-probability-of-rain-on-any-given-day-in-seattle-is-0-25" title="Permalink to this headline">#</a></h3>
+<p>This is an application of Bayes Theorem.</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the event that it is rainy in Seattle, and let <span class="math notranslate nohighlight">\(B\)</span> be the event that all three friends say it’s rainy. Then <span class="math notranslate nohighlight">\(P(B|A) = (2/3)^3\)</span> since each friend must tell the truth (we assume the friends decisions to lie are independent). The probability <span class="math notranslate nohighlight">\(P(A)=0.25\)</span> is given. To compute <span class="math notranslate nohighlight">\(P(B)\)</span> we split into cases whether it’s rainy or not,</p>
+<div class="math notranslate nohighlight">
+\[ P(B) = P(B|A)P(A) + P(B|A^C)P(A^C) = (2/3)^3*0.25 + (1/3)^3*0.75.\]</div>
+<p>Plugging into Bayes Theorem,</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{(2/3)^3*0.25}{(2/3)^3*0.25 + (1/3)^3*0.75}\approx 0.7272 = 72.7\% \]</div>
+<p><sub> Source: <a class="reference external" href="https://www.amazon.com/dp/0578973839?&amp;linkCode=sl1&amp;tag=nicksingh03-20&amp;linkId=4fa541a539320e8936926cb3a5167881&amp;language=en_US&amp;ref_=as_li_ss_tl">Ace the Data Science Interview</a></sub></p>
+</section>
+<section id="three-ants-are-sitting-at-the-corners-of-an-equilateral-triangle-each-ant-randomly-picks-a-direction-and-starts-moving-along-the-edge-of-the-triangle-what-is-the-probability-that-none-of-the-ants-collide-now-what-if-it-is-k-ants-on-all-k-corners-of-an-equilateral-polygon">
+<h3><a class="toc-backref" href="#id29">Three ants are sitting at the corners of an equilateral triangle. Each ant randomly picks a direction and starts moving along the edge of the triangle. What is the probability that none of the ants collide? Now, what if it is <span class="math notranslate nohighlight">\(k\)</span> ants on all <span class="math notranslate nohighlight">\(k\)</span> corners of an equilateral polygon?</a><a class="headerlink" href="#three-ants-are-sitting-at-the-corners-of-an-equilateral-triangle-each-ant-randomly-picks-a-direction-and-starts-moving-along-the-edge-of-the-triangle-what-is-the-probability-that-none-of-the-ants-collide-now-what-if-it-is-k-ants-on-all-k-corners-of-an-equilateral-polygon" title="Permalink to this headline">#</a></h3>
+<p>In order for none of the ants to collide, they must all go clockwise or all go counter-clockwise around the triangle. Thus there are 2 non-collision outcomes. Overall, there are <span class="math notranslate nohighlight">\(2^3\)</span> outcomes, since each of the 3 ants could go 1 of 2 ways. All outcomes are equally likely, so the probability of no collisions is <span class="math notranslate nohighlight">\(2/2^3 = 2^{-2}\)</span>.</p>
+<p>In the more general case, there are still only 2 non-collision outcomes, but the total number of outcomes is <span class="math notranslate nohighlight">\(2^k\)</span> since there are <span class="math notranslate nohighlight">\(k\)</span> ants each making a binary choice. The probability of no collision now is <span class="math notranslate nohighlight">\(2/2^k=2^{-(k-1)}\)</span>. Intuitively, this makes sense since the odds of collision should increase as there are more ants and more possible collisions.</p>
+<p><sub> Source: <a class="reference external" href="https://www.amazon.com/dp/0578973839?&amp;linkCode=sl1&amp;tag=nicksingh03-20&amp;linkId=4fa541a539320e8936926cb3a5167881&amp;language=en_US&amp;ref_=as_li_ss_tl">Ace the Data Science Interview</a></sub></p>
+</section>
+<section id="how-many-cards-would-you-expect-to-draw-from-a-standard-deck-before-seeing-the-first-ace-todo">
+<h3><a class="toc-backref" href="#id30">How many cards would you expect to draw from a standard deck before seeing the first ace? TODO</a><a class="headerlink" href="#how-many-cards-would-you-expect-to-draw-from-a-standard-deck-before-seeing-the-first-ace-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="say-you-are-given-an-unfair-coin-with-an-unknown-bias-towards-heads-or-tails-how-can-you-generate-fair-odds-using-this-coin">
+<h3><a class="toc-backref" href="#id31">Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?</a><a class="headerlink" href="#say-you-are-given-an-unfair-coin-with-an-unknown-bias-towards-heads-or-tails-how-can-you-generate-fair-odds-using-this-coin" title="Permalink to this headline">#</a></h3>
+<p>This is a clever trick. Let <span class="math notranslate nohighlight">\(p\)</span> be the probability of heads. <span class="math notranslate nohighlight">\(P(HT) = p(1-p)\)</span> and <span class="math notranslate nohighlight">\(P(TH) = (1-p)p\)</span> so these events have equal probability. Let a trial be two coin flips. Define the trial to be heads if the result is HT and tails if the result is TH. If the result is HH or TT, repeat the trail. Now the two events are equally likely.</p>
+</section>
+<section id="a-fair-die-is-rolled-n-times-what-is-the-probability-that-the-largest-number-rolled-is-r-for-each-r-in-1-ldots-6-todo">
+<h3><a class="toc-backref" href="#id32">A fair die is rolled <span class="math notranslate nohighlight">\(n\)</span> times. What is the probability that the largest number rolled is <span class="math notranslate nohighlight">\(r\)</span>, for each <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(1,\ldots,6\)</span>? TODO</a><a class="headerlink" href="#a-fair-die-is-rolled-n-times-what-is-the-probability-that-the-largest-number-rolled-is-r-for-each-r-in-1-ldots-6-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="let-x-y-sim-n-0-1-be-independent-gaussians-what-is-p-2x-y">
+<h3><a class="toc-backref" href="#id33">Let <span class="math notranslate nohighlight">\(X,Y\sim N(0,1)\)</span> be independent Gaussians, what is <span class="math notranslate nohighlight">\(P(2X&gt;Y)\)</span>?</a><a class="headerlink" href="#let-x-y-sim-n-0-1-be-independent-gaussians-what-is-p-2x-y" title="Permalink to this headline">#</a></h3>
+<p>First, rewrite this as <span class="math notranslate nohighlight">\(P(2X-Y&gt;0)\)</span>. Since independent Gaussians add <span class="math notranslate nohighlight">\(N(\mu_x,\sigma_x^2)+N(\mu_y,\sigma_Y^2) = N(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\)</span>, define <span class="math notranslate nohighlight">\(Z=2X+Y + 2N(0,1)+N(0,1)= N(0,4)+N(0,1) = N(0,5)\)</span>. Now we want <span class="math notranslate nohighlight">\(P(Z&gt;0)\)</span>, and since <span class="math notranslate nohighlight">\(Z\)</span> is Gaussian with mean 0, this has probability 1/2.</p>
+</section>
+<section id="there-are-two-groups-of-n-users-a-and-b-and-each-user-in-a-is-friends-with-those-in-b-and-vice-versa-each-user-in-a-will-randomly-choose-a-user-in-b-as-their-best-friend-and-each-user-in-b-will-randomly-choose-a-user-in-a-as-their-best-friend-if-two-people-have-chosen-each-other-they-are-mutual-best-friends-what-is-the-probability-that-there-will-be-no-mutual-best-friendships-todo">
+<h3><a class="toc-backref" href="#id34">There are two groups of <span class="math notranslate nohighlight">\(n\)</span> users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO</a><a class="headerlink" href="#there-are-two-groups-of-n-users-a-and-b-and-each-user-in-a-is-friends-with-those-in-b-and-vice-versa-each-user-in-a-will-randomly-choose-a-user-in-b-as-their-best-friend-and-each-user-in-b-will-randomly-choose-a-user-in-a-as-their-best-friend-if-two-people-have-chosen-each-other-they-are-mutual-best-friends-what-is-the-probability-that-there-will-be-no-mutual-best-friendships-todo" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="statistics">
+<h2><a class="toc-backref" href="#id35">Statistics</a><a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h2>
+<section id="derive-the-expected-value-for-the-uniform-distribution-a-b">
+<h3><a class="toc-backref" href="#id36">Derive the expected value for the uniform distribution <span class="math notranslate nohighlight">\([a,b]\)</span>.</a><a class="headerlink" href="#derive-the-expected-value-for-the-uniform-distribution-a-b" title="Permalink to this headline">#</a></h3>
+<p>Intuition tells us that it should be the midpoint, <span class="math notranslate nohighlight">\(\frac{b+a}{2}\)</span>.</p>
+<p>The probability density function for this distribution is <span class="math notranslate nohighlight">\(\frac{1}{b-a}\)</span> on the interval <span class="math notranslate nohighlight">\([a,b]\)</span> and 0 everywhere else. The expected value for the distribution is the value of the integral</p>
+<div class="math notranslate nohighlight">
+\[ \int_{-\infty}^\infty xp_{[a,b]}(x)dx = \int_a^b \frac{x}{b-a}dx = \frac{1}{b-a} [\tfrac{1}{2}x^2|_a^b] = \frac{b^2-a^2}{2(b-a)} = \frac{a+b}{2}.\]</div>
+</section>
+<section id="what-is-the-central-limit-theorem-why-is-it-useful-todo">
+<h3><a class="toc-backref" href="#id37">What is the Central Limit Theorem? Why is it useful?  TODO</a><a class="headerlink" href="#what-is-the-central-limit-theorem-why-is-it-useful-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="how-would-you-explain-a-confidence-interval-to-a-non-technical-audience-todo">
+<h3><a class="toc-backref" href="#id38">How would you explain a confidence interval to a non-technical audience? TODO</a><a class="headerlink" href="#how-would-you-explain-a-confidence-interval-to-a-non-technical-audience-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="describe-p-values-in-laymans-terms-todo">
+<h3><a class="toc-backref" href="#id39">Describe p-values in layman’s terms. TODO</a><a class="headerlink" href="#describe-p-values-in-laymans-terms-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="describe-a-b-testing-what-are-some-common-pitfalls-todo">
+<h3><a class="toc-backref" href="#id40">Describe A/B testing. What are some common pitfalls? TODO</a><a class="headerlink" href="#describe-a-b-testing-what-are-some-common-pitfalls-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="how-would-you-derive-a-confidence-interval-from-a-series-of-coin-tosses-todo">
+<h3><a class="toc-backref" href="#id41">How would you derive a confidence interval from a series of coin tosses? TODO</a><a class="headerlink" href="#how-would-you-derive-a-confidence-interval-from-a-series-of-coin-tosses-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="you-sample-from-a-uniform-distribution-0-d-n-times-what-is-your-best-estimate-of-d">
+<h3><a class="toc-backref" href="#id42">You sample from a uniform distribution <span class="math notranslate nohighlight">\([0, d]\)</span> <span class="math notranslate nohighlight">\(n\)</span> times. What is your best estimate of <span class="math notranslate nohighlight">\(d\)</span>?</a><a class="headerlink" href="#you-sample-from-a-uniform-distribution-0-d-n-times-what-is-your-best-estimate-of-d" title="Permalink to this headline">#</a></h3>
+<p>Maximum likelihood estimation.</p>
+<p>Given <span class="math notranslate nohighlight">\(d\)</span> and sample points <span class="math notranslate nohighlight">\(X_1,\ldots, X_n\)</span>, the probability of randomly drawing this collection of points would be <span class="math notranslate nohighlight">\((\tfrac{1}{d})^n\)</span> for <span class="math notranslate nohighlight">\(d\geq \max(X_i)\)</span> and probability 0 if <span class="math notranslate nohighlight">\(d&lt;\max(X_i)\)</span>. Thus the maximum likelihood estimate for <span class="math notranslate nohighlight">\(d\)</span> is <span class="math notranslate nohighlight">\(\max(X_i)\)</span>.</p>
+</section>
+<section id="you-are-drawing-from-a-normally-distributed-random-variable-x-sim-n-0-1-once-a-day-what-is-the-approximate-expected-number-of-days-until-you-get-a-value-of-more-than-2">
+<h3><a class="toc-backref" href="#id43">You are drawing from a normally distributed random variable <span class="math notranslate nohighlight">\(X \sim N(0, 1)\)</span> once a day. What is the approximate expected number of days until you get a value of more than 2?</a><a class="headerlink" href="#you-are-drawing-from-a-normally-distributed-random-variable-x-sim-n-0-1-once-a-day-what-is-the-approximate-expected-number-of-days-until-you-get-a-value-of-more-than-2" title="Permalink to this headline">#</a></h3>
+<p>This is a geometric distribution. We need to compute the probability <span class="math notranslate nohighlight">\(p = P(X&gt;2)\)</span>. Since <span class="math notranslate nohighlight">\(X\sim N(0,1)\)</span>, there is approximately a 95% chance that <span class="math notranslate nohighlight">\(X\)</span> lies within 2 standard deviations, that is <span class="math notranslate nohighlight">\(|X|&lt;2\)</span>. This means <span class="math notranslate nohighlight">\(P(|X|&gt;2) = 0.05\)</span> and since the distribution is symmetric about 0, <span class="math notranslate nohighlight">\(P(X&gt;2) = 0.025\)</span>.</p>
+<p>Now each trial has probability <span class="math notranslate nohighlight">\(p=0.025\)</span> of success, and we want to know how many trials we need to get our first success. The expected value for this is <span class="math notranslate nohighlight">\(1/p = 1/0.025 = 40\)</span>.</p>
+</section>
+<section id="derive-the-expectation-for-a-geometric-distributed-random-variable">
+<h3><a class="toc-backref" href="#id44">Derive the expectation for a geometric distributed random variable.</a><a class="headerlink" href="#derive-the-expectation-for-a-geometric-distributed-random-variable" title="Permalink to this headline">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be a geometric random variable with parameter <span class="math notranslate nohighlight">\(p\)</span>. Then <span class="math notranslate nohighlight">\(P(X=k) = (1-p)^{k-1} p\)</span>. The expectation of <span class="math notranslate nohighlight">\(X\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\mathbb{E}[X] &amp;= \sum_{k=1}^\infty kP(X=k) = \sum_{k=1}^\infty  k(1-p)^{k-1} p  \\
+&amp;= p\sum_{k=1}^\infty \frac{d}{dp}\left[-(1-p)^k\right] = p\frac{d}{dp}\left[-\sum_{k=1}^\infty (1-p)^k\right] \\&amp;= p\frac{d}{dp}\left[-\sum_{k=0}^\infty (1-p)^k\right]= p \frac{d}{dp} \left[\frac{-1}{1-(1-p)}\right]\\
+&amp;= p\frac{d}{dp}\frac{-1}{p} = p\frac{1}{p^2} = \frac{1}{p}.
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="given-a-random-bernoulli-trial-generator-how-do-you-return-a-value-sampled-from-a-normal-distribution-todo">
+<h3><a class="toc-backref" href="#id45">Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution.  TODO</a><a class="headerlink" href="#given-a-random-bernoulli-trial-generator-how-do-you-return-a-value-sampled-from-a-normal-distribution-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="what-is-mle-what-about-map-how-do-they-compare">
+<h3><a class="toc-backref" href="#id46">What is MLE? What about MAP? How do they compare?</a><a class="headerlink" href="#what-is-mle-what-about-map-how-do-they-compare" title="Permalink to this headline">#</a></h3>
+<p><strong>MLE</strong>, or <strong>Maximum Likelihood Estimation</strong>, is a means of estimating a parameter of a distribution. Let <span class="math notranslate nohighlight">\(D(p)\)</span> be a distribution with parameter <span class="math notranslate nohighlight">\(p\)</span>, from which we have sampled points <span class="math notranslate nohighlight">\(X_1,\ldots, X_n\)</span>. Then using the distribution, we can compute a likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}(p;X_1,\ldots, X_n)\)</span> that is the probability of drawing this sample which depends on the parameter <span class="math notranslate nohighlight">\(p\)</span>. If the distribution is continuous, the probability would be 0, so <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> instead captures the density function evaluated for this sample.
+Then we take that estimator that maximizes this function,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p}_{MLE} = \argmax_{p} \mathcal{L}(p;X_1,\ldots, X_n).
+\]</div>
+<p>In practice, we often define the log-likelihood function <span class="math notranslate nohighlight">\(\ell(p;X_1,\ldots, X_n) = \log(\mathcal{L}(p;X_1,\ldots, X_n))\)</span> since the maximizing value for <span class="math notranslate nohighlight">\(p\)</span> is the same for <span class="math notranslate nohighlight">\(\ell\)</span> and <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> since logs preserve order, and for independent samples the likelihood function will be a product of terms that turn into sums after the log function.</p>
+<p><strong>MAP</strong>, or <strong>maximum a posteriori</strong>, is another way of estimating a distribution parameter but where we assume that some parameter values are more likely than others. In other words, the parameter itself comes from a distribution, <span class="math notranslate nohighlight">\(P\)</span>. Similar to MLE, we derive a (log)-likelihood function <span class="math notranslate nohighlight">\(\ell\)</span> or <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, but now we weight this likelihood of the sample, by the likelihood of the parameter. The result is that</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p}_{MAP} = \argmax_{p} \mathcal{L}(p;X_1,\ldots, X_n)P(p).
+\]</div>
+</section>
+<section id="explain-hypothesis-testing-todo">
+<h3><a class="toc-backref" href="#id47">Explain hypothesis testing.  TODO</a><a class="headerlink" href="#explain-hypothesis-testing-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="what-is-a-z-test-what-is-a-t-test-when-would-you-use-each-todo">
+<h3><a class="toc-backref" href="#id48">What is a <span class="math notranslate nohighlight">\(z\)</span>-test? What is a <span class="math notranslate nohighlight">\(t\)</span>-test? When would you use each? TODO</a><a class="headerlink" href="#what-is-a-z-test-what-is-a-t-test-when-would-you-use-each-todo" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="suppose-you-draw-n-samples-from-a-uniform-distribution-u-a-b-what-are-the-mle-estimates-of-a-and-b">
+<h3><a class="toc-backref" href="#id49">Suppose you draw <span class="math notranslate nohighlight">\(n\)</span> samples from a uniform distribution, <span class="math notranslate nohighlight">\(U(a,b)\)</span>. What are the MLE estimates of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>?</a><a class="headerlink" href="#suppose-you-draw-n-samples-from-a-uniform-distribution-u-a-b-what-are-the-mle-estimates-of-a-and-b" title="Permalink to this headline">#</a></h3>
+<p>First, we define the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}(a,b;X_1,\ldots, X_n) = \prod_{i=1}^n f(X_i| a,b)\)</span> where <span class="math notranslate nohighlight">\(f(X_i|a,b)\)</span> is the density function at <span class="math notranslate nohighlight">\(X_i\)</span> given the parameters <span class="math notranslate nohighlight">\(a,b\)</span>. If <span class="math notranslate nohighlight">\(X_i \notin [a,b]\)</span> then this is zero, otherwise it is <span class="math notranslate nohighlight">\(\frac{1}{b-a}\)</span>. Plugging this in to the likelihood function then gives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{L}(a,b;X_1,\ldots, X_n) 
+= \begin{cases} \frac{1}{(b-a)^n} &amp;a\leq \min(X_i)\leq \max(X_i)\leq b\\
+0 &amp;a&gt;\min(X_i)\text{ or }b&lt;\max(X_i)
+\end{cases}\end{split}\]</div>
+<p>Since this gets smaller the larger <span class="math notranslate nohighlight">\(|b-a|\)</span> becomes, the smallest interval possible will maximize the likelihood, and so <span class="math notranslate nohighlight">\(\hat{a}_{MLE} = \min(X_i)\)</span> and <span class="math notranslate nohighlight">\(\hat{b}_{MLE} = \max(X_i)\)</span>.</p>
+</section>
+<section id="let-x-y-sim-u-0-1-be-independent-what-is-the-expected-value-of-max-x-y-todo">
+<h3><a class="toc-backref" href="#id50">Let <span class="math notranslate nohighlight">\(X,Y\sim U(0,1)\)</span> be independent, what is the expected value of <span class="math notranslate nohighlight">\(\max(X,Y)\)</span>? TODO</a><a class="headerlink" href="#let-x-y-sim-u-0-1-be-independent-what-is-the-expected-value-of-max-x-y-todo" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./practice"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Interview Prep</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="machine_learning.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine Learning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Anya Michaelsen<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
