@@ -102,7 +102,7 @@ Some properties of cdfs:
 
 ### What is a Bernoulli Trial? What is its mean and variance? 
 
-A Bernoulli trial is a single experiment with a "success" outcome occuring with probability $p$ (ex: coin flip).
+A Bernoulli trial is a single experiment with a "success" outcome occurring with probability $p$ (ex: coin flip).
 
 The mean is given by 
 
@@ -113,18 +113,18 @@ The variance is
 $$ \mathbb{E}((X-p)^2) = (0-p)^2(1-p) + (1-p)^2(p) = p(1-p)$$
 
 ### What is the binomial distribution? What are its parameters, mean, and variance? 
- Given $n$ Bernoulli trials, let $X$ be the number of successes that occured, then $X$ has a binomial distribution, $X\sim Binom(n,p)$. 
+ Given $n$ Bernoulli trials, let $X$ be the number of successes that occurred, then $X$ has a binomial distribution, $X\sim Binom(n,p)$. 
 
 This is a **discrete** distribution, with probability mass function
 $$P(X=k) = {n \choose k} p^{k}(1-p)^{n-k}.$$
 
 where ${n \choose k}=\frac{n!}{k!(n-k)!}$ is the binomial coeffient.
 
-The expected value is the sum of the expected value for each Bernoulli trial, which is $p$, so $\mathbb{E}(X)=np$. Similarly, given the indepedence of the trials, the variance is $\text{Var}(X) = np(1-p)$. 
+The expected value is the sum of the expected value for each Bernoulli trial, which is $p$, so $\mathbb{E}(X)=np$. Similarly, given the independence of the trials, the variance is $\text{Var}(X) = np(1-p)$. 
 
 ### What is the Poisson distribution? What are its parameters, mean, and variance? 
 
-Given random events happening at a known average rate, the Poisson distribution model the probability of a given number of these random events occuring in a fixed interval (usually time). If $\lambda>0$ is the average number of events occuring in the time period, and $X$ is the number of these events occuring in an interval, 
+Given random events happening at a known average rate, the Poisson distribution model the probability of a given number of these random events occurring in a fixed interval (usually time). If $\lambda>0$ is the average number of events occurring in the time period, and $X$ is the number of these events occurring in an interval, 
 
 $$ \mathbb{P}(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}.$$
 
@@ -140,7 +140,7 @@ The mean is the average of the end points, $\frac{a+b}{2}$ and the variance is $
 
 ### What is the Geometric distribution? What are its parameters, mean, and variance? 
 
-Given a sequence of repeated Bernoulli trials with probablity $p$, the geometric distribution models the number of trials needed to get the first success. Let $X$ be the number of attempts until a success, then $\mathbb{P}(X) = (1-p)^{k-1}p$ for $k\geq 1$. The mean is $\mathbb{E}(X) = 1/p$, via the following derivation,
+Given a sequence of repeated Bernoulli trials with probability $p$, the geometric distribution models the number of trials needed to get the first success. Let $X$ be the number of attempts until a success, then $\mathbb{P}(X) = (1-p)^{k-1}p$ for $k\geq 1$. The mean is $\mathbb{E}(X) = 1/p$, via the following derivation,
 
 $$\begin{align*}
 \mathbb{E}(X) &= \sum_{k=0}^\infty k(1-p)^{k-1}p  = p\sum_{k=0}^\infty k(1-p)^{k-1} =p \sum_{k=0}^\infty -\frac{d}{dp}[(1-p)^k] \\
@@ -151,7 +151,7 @@ And the variance is $\text{Var}(X) = \frac{1-p}{p^2}$.
 
 ### What is the Exponential distribution? What are its parameters, mean, and variance? 
 
-The exponential distribution is the probability distribution of the time between events in a Poisson point process, a process where events with fixed average rate occur independently. It is analagous to the geometric distribution (discrete). 
+The exponential distribution is the probability distribution of the time between events in a Poisson point process, a process where events with fixed average rate occur independently. It is analogous to the geometric distribution (discrete). 
 
 **PDF:**  $f(x)=\lambda e^{-\lambda x}$, **CDF:** $F(x) = 1-e^{-\lambda x}$. Both for $x\geq 0$ and $0$ when $x<0$,
 
@@ -211,7 +211,7 @@ The **power level, $\beta$**, is the probability of correctly rejecting a false 
 
 ### If you roll 3 dice in order, what is the probability that the values will be strictly decreasing? 
 
-There are $6^3$ possible rolls, all of which are equally likely. We can count the number of rolls that are strictly descreasing to get their probability. 
+There are $6^3$ possible rolls, all of which are equally likely. We can count the number of rolls that are strictly decreasing to get their probability. 
 
 If the first roll is a 1 or 2, the sequence cannot be strictly decreasing. 
 
@@ -225,7 +225,7 @@ If the first roll is a 6, there are 10 decreasing sequences (6-5-4/3/2/1, 6-4-3/
 
 Adding these possibilities up, there are 10+6+3+1 = 20 strictly decreasing rolls possible, so the probability that rolling 3 dice in order will produce one of these sequences is $20/6^3$. 
 
-A general patten can be derived. Let $k$ be the number of rolls and let $n$ be the maximum allowed value of any roll, define $X(k,n)$ be the number of strictly decreasing rolls possible. The problem asks for $X(3,6)$. This quanitity satisfies a recursive relation:
+A general patten can be derived. Let $k$ be the number of rolls and let $n$ be the maximum allowed value of any roll, define $X(k,n)$ be the number of strictly decreasing rolls possible. The problem asks for $X(3,6)$. This quantity satisfies a recursive relation:
 
 $$ X(k,n) = X(k-1,1) + X(k-1, 2) + \cdots + X(k-1, n-1) $$
 

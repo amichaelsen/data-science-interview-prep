@@ -13,4 +13,4 @@ This website was created using [Jupyter Book](https://jupyterbook.org/en/stable/
 (contributing-label)=
 ## Contributing
 
-Have other good interview questions you want to add? Catch any typos or errors that need fixing? Everyone is welcome to contribute to this resource, my hope is that it can grow, and community contribuitions are the top way to making that happen. Use the Github links in the top right hand corner to suggest edits (via pull request) and/or create issues on the repository. 
+Have other good interview questions you want to add? Catch any typos or errors that need fixing? Everyone is welcome to contribute to this resource, my hope is that it can grow, and community contributions are the top way to making that happen. Use the Github links in the top right hand corner to suggest edits (via pull request) and/or create issues on the repository. 
