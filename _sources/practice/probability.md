@@ -269,7 +269,7 @@ Any collection of 4 points, A, B, C, and D, is equally likely to be selected, an
 
 There are $50*49$ possible pairs of cards. Fixing the first card of a pair, there are 9 remaining cards of the same color, and 4 remaining cards of the same value among the 49 cards remaining. So there are $49-9-4=36$ cards that would give a pair satisfying the conditions. The probability is then $36/49$. 
 
-### What is the expected number of rolls needed to see all 6 sides of a fair die? TODO
+<!-- ### What is the expected number of rolls needed to see all 6 sides of a fair die? TODO -->
 
 
 **Attempt 1** 
@@ -300,10 +300,6 @@ In the more general case, there are still only 2 non-collision outcomes, but the
 
 <sub> Source: [Ace the Data Science Interview](https://www.amazon.com/dp/0578973839?&linkCode=sl1&tag=nicksingh03-20&linkId=4fa541a539320e8936926cb3a5167881&language=en_US&ref_=as_li_ss_tl)</sub>
 
-### How many cards would you expect to draw from a standard deck before seeing the first ace? TODO
-
-
-
 
 
 ### Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?
@@ -318,9 +314,18 @@ This is a clever trick. Let $p$ be the probability of heads. $P(HT) = p(1-p)$ an
 
 First, rewrite this as $P(2X-Y>0)$. Since independent Gaussians add $N(\mu_x,\sigma_x^2)+N(\mu_y,\sigma_Y^2) = N(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)$, define $Z=2X+Y + 2N(0,1)+N(0,1)= N(0,4)+N(0,1) = N(0,5)$. Now we want $P(Z>0)$, and since $Z$ is Gaussian with mean 0, this has probability 1/2. 
 
-### There are two groups of $n$ users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO
 
+### There are two groups of $n$ users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO 
 
+One approach is to enumerate all possible pairings, and then count those which have no best friends. 
+
+Another approach is to look at each $a\in A$, let them choose their person $b\in B$. In order to have no best friends, $b$ must pick someone other than $a$ in $A$, which happens with probability $\tfrac{1}{n}$. The problem with this approach is that if every person in $A$ picks person $b$ then $b$ will always have a best friend, so we need to take all choices into account. We could let all of $A$ choose and then try to determine the odds that the choices of $B$ do not yield best friends, but this second probability will still depend on the choices of $A$ (for example, $A$ can force a best friend by all picking the same $b$ again). 
+
+Going back to the first approach, each $a\in A$ has $n$ choices, so there are $n^n$ possible selections by $A$, and these can be combined in any way with the selections by $B$ which gives $n^{2n}$ total outcomes. If there is at least 1 pairing, we can pull them out and let the remaining $n-1$ people in each group make any selection they like, resulting in $(n-1)^{2(n-1)}$ possible pairings with that particular $(a,b)$ best friend match. There are a total of $n^2$ pairings we could have picked, so there are $n^2(n-1)^{2(n-1)}$ pairings that contain a best friend match up. The probability that we don't have any matches is the complement 
+
+$$
+1 - \frac{n^2(n-1)^{2(n-1)}}{n^{2n}} =1 - \frac{n^2(n-1)^{2n}}{n^{2n}(n-1)^2} =  1 - \left(\frac{n}{n-1}\right)^2\left(\frac{n-1}{n}\right)^{2n} = 1- \left(\frac{n-1}{n}\right)^{2(n-1)}
+$$
 
 
 
@@ -335,17 +340,40 @@ The probability density function for this distribution is $\frac{1}{b-a}$ on the
 
 $$ \int_{-\infty}^\infty xp_{[a,b]}(x)dx = \int_a^b \frac{x}{b-a}dx = \frac{1}{b-a} [\tfrac{1}{2}x^2|_a^b] = \frac{b^2-a^2}{2(b-a)} = \frac{a+b}{2}.$$
 
-### What is the Central Limit Theorem? Why is it useful?  TODO
+### What is the Central Limit Theorem? Why is it useful?  
 
-### How would you explain a confidence interval to a non-technical audience? TODO
+The central limit theorem says that given a distribution $D$, if we take a sample mean with respect to this distribution, it will be normally distributed centered around the mean of the original distribution. 
+
+Specifically, $\overline{X}_n \rightarrow N(\mu, \tfrac{\sigma^2}{n})$ where $\mu$ and $\sigma^2$ are the mean and variance of $X\sim D$. 
+
+The strength of the Central Limit Theorem is that it works for a wide range of distributions (variance must be finite). This allows us to use the normal distribution for hypothesis testing, assuming the sample size is sufficiently large. 
+
+### How would you explain a confidence interval to a non-technical audience? 
+
+Suppose you have a fair coin with 50-50 odds of heads and tails. If we flip it 100 times, we expect to see about 50 heads, but we wouldn't be surprised if we saw 49, or even 45 heads. These are all point estimates. We could also predict that the number of heads will be between 45 and 55. Now using the probability of a coin toss, we could compute the odds that the number of heads is in this range. As the interval gets larger, we can be more certain that the number of heads will lie in our chosen interval. A 95% confidence interval is one that has a 95% chance of containing the sample statistic. So if we performed the 100 coin toss experiment 100 times, we would expect 95 of those trials to result in a number of heads within our interval, but 5 trials could yield more extreme values. 
 
 
-### Describe p-values in layman’s terms. TODO
+### Describe p-values in layman’s terms. 
+
+When performing a statistical test, we have a null hypothesis and the actual results or data. A p-value is the likelihood that the null hypothesis would have generated the given results. Typically a p-value of less than 0.05 is sufficient to "reject" the null hypothesis. 
 
 
-### Describe A/B testing. What are some common pitfalls? TODO
+### Describe A/B testing. What are some common pitfalls? 
 
-### How would you derive a confidence interval from a series of coin tosses? TODO
+A/B testing is type of hypothesis test, where we want to compare two versions of some product, for example a website layout, or the color scheme of a toy. Users are randomly assigned one of the two (or more) options and a measurement of success (page visits, purchases, etc) is measured. Then we have two sample populations and the average of the statistic for each. We can then perform a $z$-test or $t$-test to see if one group outperforms another, in which case we will want to roll-out the change corresponding to that version. 
+
+Some potential issues could be variation in the randomly assigned groups. Having a sufficiently large overall population should help, although if for some reason the overall study population is not representative this may undermine the results. It is also important when running tests that the tests themselves are representative of use cases. For example, running A/B tests on Christmas sweater designs in April may not give a good sense of people's Holiday preferences. 
+
+### Suppose you toss a coin 5 times and see 1 heads. How would you perform a hypothesis test to see if the coin is fair? 
+
+The null hypothesis would be that the coin *is* fair, so $P(H)=0.5$. If we are performing a 1-tailed test, we want to decide if the coin is biases towards tails. 
+
+The probability that we see a result as extreme (or more) is the probability of all tails and the probability of 1 heads. 
+
+$$
+P(H\leq 1) = P(H=0) + P(H=1) = (0.5)^5 + 5*(0.5)^5 = 6*(0.5)^5 =\tfrac{6}{32} \approx 0.18 > 0.05 
+$$
+so in this case we do not reject the null hypothesis. 
 
 ### You sample from a uniform distribution $[0, d]$ $n$ times. What is your best estimate of $d$?
 
@@ -372,8 +400,6 @@ $$\begin{align*}
 $$
 
 
-### Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution.  TODO
-
 ### What is MLE? What about MAP? How do they compare?
 
 **MLE**, or **Maximum Likelihood Estimation**, is a means of estimating a parameter of a distribution. Let $D(p)$ be a distribution with parameter $p$, from which we have sampled points $X_1,\ldots, X_n$. Then using the distribution, we can compute a likelihood function $\mathcal{L}(p;X_1,\ldots, X_n)$ that is the probability of drawing this sample which depends on the parameter $p$. If the distribution is continuous, the probability would be 0, so $\mathcal{L}$ instead captures the density function evaluated for this sample.
@@ -392,11 +418,9 @@ $$
 $$
 
 
+### What is a $z$-test? What is a $t$-test? When would you use each? 
 
-
-### Explain hypothesis testing.  TODO
-
-### What is a $z$-test? What is a $t$-test? When would you use each? TODO
+A $z$-test is used in hypothesis testing with the test statistic follows a normal distribution. The $t$-test is used when distribution is close to normal but a little wider. This typically happens when we want to apply the Central Limit Theorem but our sample size isn't big enough (e.g. less than 30). Another reason to use the $t$-test is when the variance for your sample population is unknown, in this case we can estimate it using sample variance, but doing so introduces further variability into our approximation of the sample statistic distribution (which depends on $\sigma^2$), so the $t$-test accounts for this. 
 
 ### Suppose you draw $n$ samples from a uniform distribution, $U(a,b)$. What are the MLE estimates of $a$ and $b$?
 
@@ -408,4 +432,8 @@ $$\mathcal{L}(a,b;X_1,\ldots, X_n)
 \end{cases}$$
 Since this gets smaller the larger $|b-a|$ becomes, the smallest interval possible will maximize the likelihood, and so $\hat{a}_{MLE} = \min(X_i)$ and $\hat{b}_{MLE} = \max(X_i)$. 
 
-### Let $X,Y\sim U(0,1)$ be independent, what is the expected value of $\max(X,Y)$? TODO
+### Let $X,Y\sim U(0,1)$ be independent, what is the expected value of $\max(X,Y)$? 
+
+Let $M=\min(X,Y)$. Then $P(M>z) = P(X>z,Y>z)= P(X>z)P(Y>z) = (1-z)^2$ since $X,Y$ are independent. So we have $P(M > z) = (1-z)^2$. Since $M\geq 0$, we can find $E[M] = \int_0^1 P(M>z)dz$ (intuition for this can be derived from the discrete case) which is 
+
+$$\int_0^1 (1-z)^2 dz = [-\tfrac{1}{3}(1-z)^3]_0^1 = \tfrac{1}{3}.$$
