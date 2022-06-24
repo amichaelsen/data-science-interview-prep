@@ -306,26 +306,13 @@ In the more general case, there are still only 2 non-collision outcomes, but the
 
 This is a clever trick. Let $p$ be the probability of heads. $P(HT) = p(1-p)$ and $P(TH) = (1-p)p$ so these events have equal probability. Let a trial be two coin flips. Define the trial to be heads if the result is HT and tails if the result is TH. If the result is HH or TT, repeat the trail. Now the two events are equally likely. 
 
-### A fair die is rolled $n$ times. What is the probability that the largest number rolled is $r$, for each $r$ in $1,\ldots,6$? TODO
+<!-- ### A fair die is rolled $n$ times. What is the probability that the largest number rolled is $r$, for each $r$ in $1,\ldots,6$? TODO -->
 
 
 
 ### Let $X,Y\sim N(0,1)$ be independent Gaussians, what is $P(2X>Y)$?
 
 First, rewrite this as $P(2X-Y>0)$. Since independent Gaussians add $N(\mu_x,\sigma_x^2)+N(\mu_y,\sigma_Y^2) = N(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)$, define $Z=2X+Y + 2N(0,1)+N(0,1)= N(0,4)+N(0,1) = N(0,5)$. Now we want $P(Z>0)$, and since $Z$ is Gaussian with mean 0, this has probability 1/2. 
-
-
-### There are two groups of $n$ users, A and B, and each user in A is friends with those in B and vice versa. Each user in A will randomly choose a user in B as their best friend and each user in B will randomly choose a user in A as their best friend. If two people have chosen each other, they are mutual best friends. What is the probability that there will be no mutual best friendships? TODO 
-
-One approach is to enumerate all possible pairings, and then count those which have no best friends. 
-
-Another approach is to look at each $a\in A$, let them choose their person $b\in B$. In order to have no best friends, $b$ must pick someone other than $a$ in $A$, which happens with probability $\tfrac{1}{n}$. The problem with this approach is that if every person in $A$ picks person $b$ then $b$ will always have a best friend, so we need to take all choices into account. We could let all of $A$ choose and then try to determine the odds that the choices of $B$ do not yield best friends, but this second probability will still depend on the choices of $A$ (for example, $A$ can force a best friend by all picking the same $b$ again). 
-
-Going back to the first approach, each $a\in A$ has $n$ choices, so there are $n^n$ possible selections by $A$, and these can be combined in any way with the selections by $B$ which gives $n^{2n}$ total outcomes. If there is at least 1 pairing, we can pull them out and let the remaining $n-1$ people in each group make any selection they like, resulting in $(n-1)^{2(n-1)}$ possible pairings with that particular $(a,b)$ best friend match. There are a total of $n^2$ pairings we could have picked, so there are $n^2(n-1)^{2(n-1)}$ pairings that contain a best friend match up. The probability that we don't have any matches is the complement 
-
-$$
-1 - \frac{n^2(n-1)^{2(n-1)}}{n^{2n}} =1 - \frac{n^2(n-1)^{2n}}{n^{2n}(n-1)^2} =  1 - \left(\frac{n}{n-1}\right)^2\left(\frac{n-1}{n}\right)^{2n} = 1- \left(\frac{n-1}{n}\right)^{2(n-1)}
-$$
 
 
 
